@@ -60,7 +60,7 @@ const volunteershipcards = [
     title: "Copyright and Patent Guest Lecture",
     cardImage: "assets/images/experience-page/copyright_patent_session.jpg",
     description:
-      "As the guest speaker for the \"Copyright and Patent Guest Lecture,\" I delivered an engaging presentation that not only explained the fundamentals of intellectual property but also inspired students to actively pursue copyrights and patents for their creative and innovative works. By sharing practical examples and success stories, I emphasized the importance of protecting original ideas and encouraged participants to take proactive steps in securing their intellectual property rights. My session aimed to empower students to recognize the value of their contributions and motivated them to leverage legal protections as a pathway to future success.",
+      "Inspired students to pursue legal protections for their creative and innovative work",
   },
 ];
 
@@ -83,44 +83,44 @@ const showCards = () => {
 };
 document.addEventListener("DOMContentLoaded", showCards);
 
-// Hackathon Section
-
-const hackathonsection = document.querySelector(".hackathon-section");
-const mentor = [
-  {
-    title: "The Uplift Project",
-    subtitle: "Mentor",
-    image: "assets/images/experience-page/uplift.png",
-    desp: "I would be responsible for guiding 100s of participants across the globe in their first steps towards Applied Data Science and building end-to-end machine learning projects.",
-    href: "https://uplift.girlscript.tech/",
-  },
-  {
-    title: "ULHacks",
-    subtitle: "Judge",
-    image: "assets/images/experience-page/ulhacks.png",
-    desp: "ULHacks is a 36 hour long hackathon organized with an aim to enable students to create a project which empowers learning.",
-    href: "https://ulhacks.com/",
-  },
-];
-
-const showCards3 = () => {
-  let output = "";
-  mentor.forEach(
-    ({ title, image, subtitle, desp, href }) =>
-      (output += `  
-      <div class="blog-slider__item swiper-slide">
-        <div class="blog-slider__img">
-            <img src="${image}" alt="">
-        </div>
-        <div class="blog-slider__content">
-          <div class="blog-slider__title">${title}</div>
-          <span class="blog-slider__code">${subtitle}</span>
-          <div class="blog-slider__text">${desp}</div>
-          <a href="${href}" class="blog-slider__button">Read More</a>   
-        </div>
-      </div>
-      `)
-  );
-  hackathonsection.innerHTML = output;
-};
-document.addEventListener("DOMContentLoaded", showCards3);
+// // Hackathon Section
+//
+// const hackathonsection = document.querySelector(".hackathon-section");
+// const mentor = [
+//   {
+//     title: "The Uplift Project",
+//     subtitle: "Mentor",
+//     image: "assets/images/experience-page/uplift.png",
+//     desp: "I would be responsible for guiding 100s of participants across the globe in their first steps towards Applied Data Science and building end-to-end machine learning projects.",
+//     href: "https://uplift.girlscript.tech/",
+//   },
+//   {
+//     title: "ULHacks",
+//     subtitle: "Judge",
+//     image: "assets/images/experience-page/ulhacks.png",
+//     desp: "ULHacks is a 36 hour long hackathon organized with an aim to enable students to create a project which empowers learning.",
+//     href: "https://ulhacks.com/",
+//   },
+// ];
+//
+// const showCards3 = () => {
+//   let output = "";
+//   mentor.forEach(
+//     ({ title, image, subtitle, desp, href }) =>
+//       (output += `
+//       <div class="blog-slider__item swiper-slide">
+//         <div class="blog-slider__img">
+//             <img src="${image}" alt="">
+//         </div>
+//         <div class="blog-slider__content">
+//           <div class="blog-slider__title">${title}</div>
+//           <span class="blog-slider__code">${subtitle}</span>
+//           <div class="blog-slider__text">${desp}</div>
+//           <a href="${href}" class="blog-slider__button">Read More</a>
+//         </div>
+//       </div>
+//       `)
+//   );
+//   hackathonsection.innerHTML = output;
+// };
+// document.addEventListener("DOMContentLoaded", showCards3);

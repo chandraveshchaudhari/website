@@ -9,11 +9,11 @@ const research = [
       "Chandravesh Chaudhari, Geetanjali Purswani",
     conferences:
       "Congress on Intelligent Systems, Springer Nature Singapore",
-    researchYr: 2022/9/5,
+    researchYr: 2022,
     citebox: "popup1",
-    image: "assets/images/research-page/inteferenceNetwork.png",
+    image: "assets/images/research-page/review_paper.png",
     citation: {
-      apa:
+      vancouver:
         "Chaudhari, C., Purswani, G. (2023). Stock Market Prediction Techniques Using Artificial Intelligence: A Systematic Review. In: Kumar, S., Sharma, H., Balachandran, K., Kim, J.H., Bansal, J.C. (eds) Third Congress on Intelligent Systems. CIS 2022. Lecture Notes in Networks and Systems, vol 608. Springer, Singapore. https://doi.org/10.1007/978-981-19-9225-4_17",
     },
     abstract:
@@ -22,14 +22,14 @@ const research = [
   },
 
   {
-    title: "A Call for More Rigor in Unsupervised Cross-lingual Learning",
+    title: "Hybrid Subset Feature Selection And Importance Framework",
     authors:
-      "Mikel Artetxe, Sebastian Ruder, Dani Yogatama, Gorka Labaka and Eneko Agirre",
+      "Chandravesh Chaudhari, Geetanjali Purswani",
     conferences:
-      "The 58th Annual Meeting of the Association for Computational Linguistics",
+      "2023 IEEE International Conference on Contemporary Computing and Communications (InC4), Bangalore, India, 2023",
     researchYr: 2020,
     citebox: "popup2",
-    image: "assets/images/research-page/crossLingual.png",
+    image: "assets/images/research-page/subset.png",
     citation: {
       vancouver:
         "C. Chaudhari and G. Purswani, \"Hybrid Subset Feature Selection And Importance Framework,\" 2023 IEEE International Conference on Contemporary Computing and Communications (InC4), Bangalore, India, 2023, pp. 1-6, doi: 10.1109/InC457730.2023.10262828. keywords: {Training;Pipelines;Predictive models;Feature extraction;Prediction algorithms;Inference algorithms;Stock markets;Feature Importance;Feature Selection;Stock Market;Artificial Intelligence;supervised learning;feature-selectionpy},\n" ,

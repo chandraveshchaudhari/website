@@ -194,22 +194,9 @@ ul ol {
   background-repeat: no-repeat;
   border-top-left-radius: 13px;
   border-top-right-radius: 13px;
-  border-bottom-left-radius: 13px;
-}
-
-
-/*i have done custom change in this*/
-
-.card1 .featured-image {
   width: 100%;
-  height: auto;
-  max-height: 300px;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
+  height: 300px;
 }
-
-
 
 @media only screen and (min-width: 1280px) {
   .card1 h3 {
@@ -227,15 +214,15 @@ ul ol {
     font-size: calc(100% + 1vw);
   }
 
-/*  .card1 .featured-image {*/
-/*    border-top-left-radius: 13px;*/
-/*    border-bottom-left-radius: 13px;*/
-/*    border-top-right-radius: 0;*/
-/*    max-width: 300px;*/
-/*    height: inherit;*/
-/*    width: 100%;*/
-/*  }*/
-/*}*/
+  .card1 .featured-image {
+    border-top-left-radius: 13px;
+    border-bottom-left-radius: 13px;
+    border-top-right-radius: 0;
+    max-width: 300px;
+    height: inherit;
+    width: 100%;
+  }
+}
 
 @media only screen and (max-width: 992px) {
   .card1 .featured-image {
@@ -702,7 +689,7 @@ a:link {
 /*Hackathon Section Ends*/
 /*
 ----------------------------
-       SVG ANIMATIONS 
+       SVG ANIMATIONS
 ----------------------------
 */
 #tie {
@@ -717,4 +704,4 @@ a:link {
   50% {
     transform: skew(-12deg) rotate(-6deg);
   }
-}}
+}

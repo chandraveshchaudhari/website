@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", showCards2);
 const volunteership = document.querySelector(".volunteership");
 const volunteershipcards = [
   {
-    title: "Copyright and Patent Guest Lecture",
+    title: "Copyright and Patent",
     cardImage: "assets/images/experience-page/copyright_patent_session.jpg",
     description:
       "Inspired students to pursue legal protections for their creative and innovative work",

@@ -4,20 +4,20 @@ const researchTable = document.querySelector(".main");
 
 const research = [
   {
-    title: "A Batch Normalized Inference Network Keeps the KL Vanishing Away",
+    title: "Stock Market Prediction Techniques Using Artificial Intelligence: A Systematic Review",
     authors:
-      "Qile Zhu, Wei Bi, Xiaojiang Liu, Xiyao Ma, Xiaolin Li and Dapeng Wu",
+      "Chandravesh Chaudhari, Geetanjali Purswani",
     conferences:
-      "The 58th Annual Meeting of the Association for Computational Linguistics",
-    researchYr: 2020,
+      "Congress on Intelligent Systems, Springer Nature Singapore",
+    researchYr: 2022/9/5,
     citebox: "popup1",
     image: "assets/images/research-page/inteferenceNetwork.png",
     citation: {
-      vancouver:
-        "Qile Zhu, Wei Bi, Xiaojiang Liu, Xiyao Ma, Xiaolin Li and Dapeng Wu. A Batch Normalized Inference Network Keeps the KL Vanishing Away. The 58th Annual Meeting of the Association for Computational Linguistics 2020.",
+      apa:
+        "Chaudhari, C., Purswani, G. (2023). Stock Market Prediction Techniques Using Artificial Intelligence: A Systematic Review. In: Kumar, S., Sharma, H., Balachandran, K., Kim, J.H., Bansal, J.C. (eds) Third Congress on Intelligent Systems. CIS 2022. Lecture Notes in Networks and Systems, vol 608. Springer, Singapore. https://doi.org/10.1007/978-981-19-9225-4_17",
     },
     abstract:
-      "This is currently left empty and this can be considered as a dummy data 1",
+      "This paper systematically reviews the literature related to stock price prediction systems. The reviewers collected 6222 research works from 12 databases. The reviewers reviewed the full-text of 10 studies in preliminary search and 70 studies selected based on PRISMA. This paper uses the PRISMA-based Python framework systematic-reviewpy to conduct this systematic review and browser-automationpy to automate downloading of full-texts. The programming code with comprehensive documentation, citation data, input variables, and reviews spreadsheets is provided, making this review replicable, open-source, and free from human errors in selecting studies. The reviewed literature is categorized based on type of prediction systems to demonstrate the evolution of techniques and research gaps. The reviewed literature is 7 % statistical, 9% machine learning, 23% deep learning, 20% hybrid, 25% combination of machine learning and deep learning, and 14% studies explore multiple categories of techniques. This review provides detailed information on prediction techniques, competitor techniques, performance metrics, input variables, data timing, and research gap to enable researchers to create prediction systems per technique category. The review showed that stock trading data is most used and collected from Yahoo! Finance. Studies showed that sentiment data improved stock prediction, and most papers used tweets from Twitter. Most of the reviewed studies showed significant improvements in predictions to previous systems.\n",
     absbox: "absPopup1",
   },
 
@@ -32,118 +32,11 @@ const research = [
     image: "assets/images/research-page/crossLingual.png",
     citation: {
       vancouver:
-        "Mikel Artetxe, Sebastian Ruder, Dani Yogatama, Gorka Labaka and Eneko Agirre. A Call for More Rigor in Unsupervised Cross-lingual Learning. The 58th Annual Meeting of the Association for Computational Linguistics 2020.",
+        "C. Chaudhari and G. Purswani, \"Hybrid Subset Feature Selection And Importance Framework,\" 2023 IEEE International Conference on Contemporary Computing and Communications (InC4), Bangalore, India, 2023, pp. 1-6, doi: 10.1109/InC457730.2023.10262828. keywords: {Training;Pipelines;Predictive models;Feature extraction;Prediction algorithms;Inference algorithms;Stock markets;Feature Importance;Feature Selection;Stock Market;Artificial Intelligence;supervised learning;feature-selectionpy},\n" ,
     },
     abstract:
-      "This is currently left empty and this can be considered as a dummy data 2",
+      "Feature selection algorithms are used in high-dimensional data to remove noise, reduce model overfitting, training and inference time, and get the importance of features. Features subset selection is choosing the subset with the best performance. This research provides a Hybrid subset feature selection and importance (HSFSI) framework that provides a pipeline with customization for choosing feature selection algorithms. The authors propose a hybrid algorithm in the HSFSI framework to select the best possible subset using an efficient exhaustive search. The framework is tested using the Bombay stock exchange IT index’s companies’ data collected quarterly for 16 years consisting of 71 financial ratios. The experimental results demonstrate that models created using 12 features chosen by the proposed algorithm outperform models with all features with up to 6% accuracy. The importance-based ranks of all features are generated using the framework calculated using 13 implemented feature selection techniques. All selected feature subsets are cross-validated using prediction models such as support vector machine, logistic regression, KNeighbors classffier, random forest, and deep neural network. The HSFSI framework is available as an open-source Python software package named ‘‘feature-selectionpy’’ available at GitHub and Python package index.",
     absbox: "absPopup2",
-  },
-
-  {
-    title:
-      "A Comprehensive Analysis of Preprocessing for Word Representation Learning in Affective Tasks",
-    authors: "Nastaran Babanejad, Ameeta Agrawal, Aijun An and Manos Papagelis",
-    conferences:
-      "The 58th Annual Meeting of the Association for Computational Linguistics",
-    researchYr: 2020,
-    citebox: "popup3",
-    image: "assets/images/research-page/wordRepresentation.png",
-    citation: {
-      vancouver:
-        "Nastaran Babanejad, Ameeta Agrawal, Aijun An and Manos Papagelis. A Comprehensive Analysis of Preprocessing for Word Representation Learning in Affective Tasks. The 58th Annual Meeting of the Association for Computational Linguistics 2020.",
-    },
-    abstract:
-      "This is currently left empty and this can be considered as a dummy data 3",
-    absbox: "absPopup3",
-  },
-
-  {
-    title:
-      "A Contextual Hierarchical Attention Network with Adaptive Objective for Dialogue State Tracking",
-    authors:
-      "Yong Shan, Zekang Li, Jinchao Zhang, Fandong Meng, Yang Feng, Cheng Niu and Jie Zhou",
-    conferences:
-      "The 58th Annual Meeting of the Association for Computational Linguistics",
-    researchYr: 2020,
-    citebox: "popup4",
-    image: "assets/images/research-page/dialogueState.png",
-    citation: {
-      vancouver:
-        "Yong Shan, Zekang Li, Jinchao Zhang, Fandong Meng, Yang Feng, Cheng Niu and Jie Zhou. A Contextual Hierarchical Attention Network with Adaptive Objective for Dialogue State Tracking. The 58th Annual Meeting of the Association for Computational Linguistics 2020.",
-    },
-    abstract:
-      "This is currently left empty and this can be considered as a dummy data 4",
-    absbox: "absPopup4",
-  },
-
-  {
-    title: "Dual Super-Resolution Learning for Semantic Segmentation",
-    authors: "Wang, Li and Li, Dong and Zhu, Yousong and Tian, Lu and Shan, Yi",
-    conferences:
-      "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
-    researchYr: 2020,
-    citebox: "popup5",
-    image: "assets/images/research-page/semanticSegmentation.png",
-    citation: {
-      vancouver:
-        "Wang, Li and Li, Dong and Zhu, Yousong and Tian, Lu and Shan, Yi. Dual Super-Resolution Learning for Semantic Segmentation. IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2020.",
-    },
-    abstract:
-      "This is currently left empty and this can be considered as a dummy data 5",
-    absbox: "absPopup5",
-  },
-
-  {
-    title: "Deep Unfolding Network for Image Super-Resolution",
-    authors: "Zhang, Kai and Van Gool, Luc and Timofte, Radu",
-    conferences:
-      "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
-    researchYr: 2020,
-    citebox: "popup6",
-    image: "assets/images/research-page/deepNetwork.png",
-    citation: {
-      vancouver:
-        "Zhang, Kai and Van Gool, Luc and Timofte, Radu. Deep Unfolding Network for Image Super-Resolution. IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2020.",
-    },
-    abstract:
-      "This is currently left empty and this can be considered as a dummy data 6",
-    absbox: "absPopup6",
-  },
-
-  {
-    title:
-      "Unsupervised Learning for Intrinsic Image Decomposition From a Single Image",
-    authors: "Liu, Yunfei and Li, Yu and You, Shaodi and Lu, Feng",
-    conferences:
-      "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
-    researchYr: 2020,
-    citebox: "popup7",
-    image: "assets/images/research-page/imageDecomposition.png",
-    citation: {
-      vancouver:
-        "Liu, Yunfei and Li, Yu and You, Shaodi and Lu, Feng. Unsupervised Learning for Intrinsic Image Decomposition From a Single Image. IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2020.",
-    },
-    abstract:
-      "This is currently left empty and this can be considered as a dummy data 7",
-    absbox: "absPopup7",
-  },
-  {
-    title:
-      "Forward and Backward Information Retention for Accurate Binary Neural Networks",
-    authors:
-      "Qin, Haotong and Gong, Ruihao and Liu, Xianglong and Shen, Mingzhu and Wei, Ziran and Yu, Fengwei and Song, Jingkuan",
-    conferences:
-      "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
-    researchYr: 2020,
-    citebox: "popup8",
-    image: "assets/images/research-page/neuralNetworks.jpg",
-    citation: {
-      vancouver:
-        "Qin, Haotong and Gong, Ruihao and Liu, Xianglong and Shen, Mingzhu and Wei, Ziran and Yu, Fengwei and Song, Jingkuan. Forward and Backward Information Retention for Accurate Binary Neural Networks. IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2020.",
-    },
-    abstract:
-      "This is currently left empty and this can be considered as a dummy data 8",
-    absbox: "absPopup8",
   },
 ];
 AOS.init();

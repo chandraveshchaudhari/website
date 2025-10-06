@@ -230,5 +230,14 @@ I can give you the `app/` + `components/` layout with Tailwind and TypeScript de
 
 
 
+| Category                                     | Library / Component                                             | Purpose                                                                  | Stability                           |
+| -------------------------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------------ | ----------------------------------- |
+| 🎨 **Styling**                               | **Tailwind CSS**                                                | Utility-first CSS for fast, responsive layouts                           | ⭐ Extremely stable                  |
+| 🧱 **Layout & Typography**                   | Built using **Tailwind classes** (no third-party layout system) | You can control all spacing, color, font sizes via Tailwind              | ⭐ Stable                            |
+| 🌀 **Animation**                             | **Framer Motion**                                               | Handles animations like fade, slide, or stagger transitions              | ⭐ Stable, widely used in production |
+| 🌗 **Theme Handling**                        | **next-themes**                                                 | Manages dark/light mode and system theme preference                      | ⭐ Stable                            |
+| 🖋️ **Icons**                                | **lucide-react**                                                | Clean, lightweight SVG icons (open-source replacement for Feather Icons) | ⭐ Stable                            |
+| 🧾 **Forms & Validation** (optional install) | **react-hook-form** + **zod**                                   | Build forms with schema-based validation                                 | ⭐ Stable                            |
+| 🔁 **Data Fetching** (optional install)      | **@tanstack/react-query**                                       | Handles API calls, caching, refetching                                   | ⭐ Stable                            |
 
 

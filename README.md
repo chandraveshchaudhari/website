@@ -150,10 +150,10 @@ In your `package.json`, ensure these lines exist:
 ```json
 "scripts": {
   "dev": "next dev",
-  "build": "next build && next export",
-  "start": "next start",
-  "lint": "next lint"
+  "build": "next build",
+  "start": "next start"
 }
+
 ```
 
 ---

@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { Project as ProjectType } from '@/types';
 
 interface ProjectsProps {
-  projects: ProjectType[];
+  projects?: ProjectType[];
 }
 
 export default function Projects({ projects = siteConfig.projects }: ProjectsProps) {
@@ -20,29 +20,38 @@ export default function Projects({ projects = siteConfig.projects }: ProjectsPro
       >
         Projects
       </motion.h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project, index) => (
-          <motion.div
-            key={index}
-            className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            whileHover={{ scale: 1.02 }}
-          >
-            <h2 className="text-2xl font-semibold mb-2">{project.title}</h2>
-            <p className="text-lg mb-4">{project.description}</p>
-            <Link
-              href={project.link}
-              className="text-blue-500 hover:underline"
-              target="_blank"
-              rel="noopener noreferrer"
+
+      {projects.length === 0 ? (
+        <p className="text-center text-gray-500 dark:text-gray-400">
+          No projects available at the moment.
+        </p>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ scale: 1.02 }}
             >
-              View Project
-            </Link>
-          </motion.div>
-        ))}
-      </div>
+              <h2 className="text-2xl font-semibold mb-2">{project.title}</h2>
+              <p className="text-lg mb-4">{project.description}</p>
+              {project.link && (
+                <Link
+                  href={project.link}
+                  className="text-blue-500 hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Project
+                </Link>
+              )}
+            </motion.div>
+          ))}
+        </div>
+      )}
     </main>
   );
 }

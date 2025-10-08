@@ -3,13 +3,10 @@
 import siteConfig from "@/config/config";
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Research as ResearchType } from '@/types';
 
-interface ResearchProps {
-  research: ResearchType[];
-}
+export default function ResearchPage() {
+  const research = siteConfig.research;
 
-export default function Research({ research = siteConfig.research }: ResearchProps) {
   return (
     <main className="py-12">
       <motion.h1
@@ -20,6 +17,7 @@ export default function Research({ research = siteConfig.research }: ResearchPro
       >
         Research
       </motion.h1>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {research.map((res, index) => (
           <motion.div

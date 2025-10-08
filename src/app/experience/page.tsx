@@ -2,13 +2,10 @@
 
 import siteConfig from "@/config/config";
 import { motion } from 'framer-motion';
-import { Experience as ExperienceType } from '@/types';
 
-interface ExperienceProps {
-  experience: ExperienceType[];
-}
+export default function ExperiencePage() {
+  const experience = siteConfig.experience;
 
-export default function Experience({ experience = siteConfig.experience }: ExperienceProps) {
   return (
     <main className="py-12">
       <motion.h1
@@ -19,6 +16,7 @@ export default function Experience({ experience = siteConfig.experience }: Exper
       >
         Experience
       </motion.h1>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {experience.map((exp, index) => (
           <motion.div

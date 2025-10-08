@@ -2,13 +2,10 @@
 
 import siteConfig from "@/config/config";
 import { motion } from 'framer-motion';
-import { Education as EducationType } from '@/types';
 
-interface EducationProps {
-  education: EducationType[];
-}
+export default function EducationPage() {
+  const education = siteConfig.education;
 
-export default function Education({ education = siteConfig.education }: EducationProps) {
   return (
     <main className="py-12">
       <motion.h1
@@ -19,6 +16,7 @@ export default function Education({ education = siteConfig.education }: Educatio
       >
         Education
       </motion.h1>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {education.map((edu, index) => (
           <motion.div

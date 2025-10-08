@@ -6,14 +6,11 @@ import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { AnimatedText, Book } from '@/types';
 
-interface HomeProps {
-  animatedText?: AnimatedText[];
-  books?: Book[];
-}
+export default function Home() {
+  const animatedText = siteConfig.animatedText;
+  const books = siteConfig.books;
 
-export default function Home({ animatedText = siteConfig.animatedText, books = siteConfig.books }: HomeProps) {
   const [textIndex, setTextIndex] = useState(0);
 
   useEffect(() => {

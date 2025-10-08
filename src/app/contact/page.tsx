@@ -1,25 +1,63 @@
+'use client';
+
 import siteConfig from "@/config/config";
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { Contact as ContactType } from '@/types';
 
-export default function ContactPage() {
-  const { contact } = siteConfig;
+interface ContactProps {
+  contact: ContactType;
+}
 
+export default function Contact({ contact = siteConfig.contact }: ContactProps) {
   return (
-    <section className="py-12 text-center space-y-4">
-      <h1 className="text-3xl font-bold mb-6">Contact</h1>
-      <p className="text-gray-600">Feel free to reach out to me:</p>
-      <div className="space-y-2">
-        <p>Email: <a href={`mailto:${contact.email}`} className="text-primary">{contact.email}</a></p>
-        <p>
-          <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" className="text-primary">
-            LinkedIn
+    <main className="py-12">
+      <motion.h1
+        className="text-4xl font-bold mb-8 text-center"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        Contact
+      </motion.h1>
+      <motion.div
+        className="flex flex-col items-center space-y-4"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <p className="text-lg">
+          Email:{' '}
+          <a
+            href={`mailto:${contact.email}`}
+            className="text-blue-500 hover:underline"
+          >
+            {contact.email}
           </a>
         </p>
-        <p>
-          <a href={contact.github} target="_blank" rel="noopener noreferrer" className="text-primary">
-            GitHub
-          </a>
+        <p className="text-lg">
+          LinkedIn:{' '}
+          <Link
+            href={contact.linkedin}
+            className="text-blue-500 hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Profile
+          </Link>
         </p>
-      </div>
-    </section>
+        <p className="text-lg">
+          GitHub:{' '}
+          <Link
+            href={contact.github}
+            className="text-blue-500 hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Profile
+          </Link>
+        </p>
+      </motion.div>
+    </main>
   );
 }

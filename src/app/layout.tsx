@@ -6,7 +6,7 @@ import siteConfig from "@/config/config";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: siteConfig.personal.name,
+  title: siteConfig.seo.title,
   description: siteConfig.seo.description,
 };
 
@@ -16,9 +16,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
-        <ThemeProvider attribute="class" defaultTheme="light">
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <Navbar />
           <main className="max-w-6xl mx-auto px-4">{children}</main>
           <Footer />

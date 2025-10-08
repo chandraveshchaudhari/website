@@ -3,13 +3,10 @@
 import siteConfig from "@/config/config";
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Project as ProjectType } from '@/types';
 
-interface ProjectsProps {
-  projects?: ProjectType[];
-}
+export default function ProjectsPage() {
+  const projects = siteConfig.projects;
 
-export default function Projects({ projects = siteConfig.projects }: ProjectsProps) {
   return (
     <main className="py-12">
       <motion.h1

@@ -82,7 +82,7 @@ export default function Home({ animatedText = siteConfig.animatedText, books = s
                 width={200}
                 height={300}
                 className="rounded-l-lg object-cover w-full sm:w-1/3 h-48 sm:h-auto"
-                onError={(e) => console.error(`Failed to load book image: ${book.image}`)}
+                onError={() => console.error(`Failed to load book image: ${book.image}`)}
               />
               <div className="p-6 flex-1">
                 <h3 className="text-xl font-semibold mb-2">{book.title}</h3>

@@ -1,63 +1,39 @@
 'use client';
 
-import siteConfig from "@/config/config";
+import siteConfig from '@/config/config';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Contact as ContactType } from '@/types';
 
-interface ContactProps {
-  contact: ContactType;
-}
-
-export default function Contact({ contact = siteConfig.contact }: ContactProps) {
+export default function Contact() {
   return (
-    <main className="py-12">
-      <motion.h1
-        className="text-4xl font-bold mb-8 text-center"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        Contact
-      </motion.h1>
-      <motion.div
-        className="flex flex-col items-center space-y-4"
+    <div className="py-12 max-w-6xl mx-auto px-4">
+      <motion.section
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <p className="text-lg">
-          Email:{' '}
-          <a
-            href={`mailto:${contact.email}`}
-            className="text-blue-500 hover:underline"
-          >
-            {contact.email}
-          </a>
-        </p>
-        <p className="text-lg">
-          LinkedIn:{' '}
-          <Link
-            href={contact.linkedin}
-            className="text-blue-500 hover:underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Profile
-          </Link>
-        </p>
-        <p className="text-lg">
-          GitHub:{' '}
-          <Link
-            href={contact.github}
-            className="text-blue-500 hover:underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Profile
-          </Link>
-        </p>
-      </motion.div>
-    </main>
+        <h1 className="text-4xl font-bold text-center mb-8">Contact</h1>
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+          <p className="text-lg mb-4">
+            <strong>Email:</strong>{' '}
+            <a href={`mailto:${siteConfig.contact.email}`} className="text-blue-500 hover:underline">
+              {siteConfig.contact.email}
+            </a>
+          </p>
+          <p className="text-lg mb-4">
+            <strong>LinkedIn:</strong>{' '}
+            <Link href={siteConfig.contact.linkedin} className="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">
+              {siteConfig.contact.linkedin}
+            </Link>
+          </p>
+          <p className="text-lg">
+            <strong>GitHub:</strong>{' '}
+            <Link href={siteConfig.contact.github} className="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">
+              {siteConfig.contact.github}
+            </Link>
+          </p>
+        </div>
+      </motion.section>
+    </div>
   );
 }

@@ -55,7 +55,7 @@ export default function Hero({ animatedText }: HeroProps) {
               width={300}
               height={450}
               className="rounded-lg object-cover aspect-[2/3]"
-              onError={(e) => {
+              onError={() => {
                 console.error(`Failed to load image: ${siteConfig.personal.image}`);
                 setImageError(true);
               }}

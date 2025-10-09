@@ -34,7 +34,7 @@ const siteConfig = {
       institution: 'Christ University, Bangalore',
       degree: 'Doctor of Philosophy (PhD)',
       year: '2020–2025',
-      image: getAsset('assets/images/education-page/Christ_University.png'),
+      image: getAsset('images/education/Christ_University.png'),
       description: [
         'Stock prediction using multimodal learning (tabular, sentiment, time-series, news video)',
       ],
@@ -43,7 +43,7 @@ const siteConfig = {
       institution: 'Indira Gandhi National Open University',
       degree: 'Post Graduate Diploma in Computer Applications',
       year: '2017–2018',
-      image: getAsset('assets/images/education-page/ignouLogo.png'),
+      image: getAsset('images/education/ignouLogo.png'),
       description: [
         'Focused on C programming, systems analysis, web design',
         'Learned computer organisation, database management, Java programming',
@@ -53,7 +53,7 @@ const siteConfig = {
       institution: 'Chaudhary Charan Singh University, Meerut',
       degree: "Master's of Commerce – Finance",
       year: '2015–2017',
-      image: getAsset('assets/images/education-page/CCSU-Logo.jpg'),
+      image: getAsset('images/education/CCSU-Logo.jpg'),
       description: [
         'Studied managerial economics, statistical analysis',
         'Focus on security analysis, portfolio & financial management',
@@ -65,17 +65,17 @@ const siteConfig = {
   moocscards: [
     {
       title: "TensorFlow Developer Professional Certificate",
-      cardImage: getAsset("assets/images/education-page/tensorflow.png"),
+      cardImage: getAsset("images/education/tensorflow.png"),
       moocLink: "https://www.coursera.org/account/accomplishments/professional-cert/LDCLR9ZZJXDD",
     },
     {
       title: "Deep Learning Specialization (DeepLearning.AI)",
-      cardImage: getAsset("assets/images/education-page/deeplearning.png"),
+      cardImage: getAsset("images/education/deeplearning.png"),
       moocLink: "https://www.coursera.org/account/accomplishments/specialization/NKYUMBACQN63",
     },
     {
       title: "Mathematics for Machine Learning Specialization (Imperial College London)",
-      cardImage: getAsset("assets/images/education-page/math.png"),
+      cardImage: getAsset("images/education/math.png"),
       moocLink: "https://www.coursera.org/account/accomplishments/specialization/6RUU8V5QKFAP",
     },
   ],
@@ -84,7 +84,7 @@ const siteConfig = {
   experience: [
     {
       title: "Assistant Professor",
-      cardImage: getAsset("assets/images/experience-page/Christ_University.png"),
+      cardImage: getAsset("images/experience/Christ_University.png"),
       place: "Christ University",
       time: "(May 2025 – Present)",
       desp: `<li>Teaching: Predictive Analytics, Financial Forecasting</li>
@@ -92,7 +92,7 @@ const siteConfig = {
     },
     {
       title: "Teaching Assistant",
-      cardImage: getAsset("assets/images/experience-page/Christ_University.png"),
+      cardImage: getAsset("images/experience/Christ_University.png"),
       place: "Christ University",
       time: "(May 2022 – Dec 2024)",
       desp: `<li>Courses handled: Computer Applications in Business, Excel, E-commerce</li>
@@ -104,26 +104,20 @@ const siteConfig = {
   projects: [
     {
       title: "MultiModal Machine Learning AutoML",
-      cardImage: getAsset("assets/images/project-page/Brain-AutoML.png"),
+      cardImage: getAsset("images/project/Brain-AutoML.png"),
       description: "BMMA framework is capable of scaling to multiple modalities such as tabular, sentiment data, time series, and computer vision data...",
-      tagimg: "https://cdn.iconscout.com/icon/free/png-512/react-1-282599.png",
-      Previewlink: "",
       Githublink: "https://github.com/chandraveshchaudhari/brain-ai",
     },
     {
       title: "Hybrid Subset Feature Selection and Importance Framework",
-      cardImage: getAsset("assets/images/project-page/HSFSIframework.png"),
+      cardImage: getAsset("images/project/HSFSIframework.png"),
       description: "Implements MultiSURF, ReliefF, SURF, and more for scalable feature selection...",
-      tagimg: "https://image.flaticon.com/icons/png/512/643/643350.png",
-      Previewlink: "",
       Githublink: "https://github.com/chandraveshchaudhari/hybrid-feature-selection",
     },
     {
       title: "systematic-reviewpy",
-      cardImage: getAsset("assets/images/project-page/systematic-reviewpy.png"),
+      cardImage: getAsset("images/project/systematic-reviewpy.png"),
       description: "An open-source Python framework for systematic review based on PRISMA",
-      tagimg: "https://cdn.iconscout.com/icon/free/png-512/react-1-282599.png",
-      Previewlink: "",
       Githublink: "https://github.com/chandraveshchaudhari/systematic-reviewpy",
     },
   ],
@@ -142,7 +136,7 @@ const siteConfig = {
       },
       abstract:
         "This paper systematically reviews the literature related to stock price prediction systems...",
-      link: "#", // optional: external link if available
+      link: "https://link.springer.com/chapter/10.1007/978-981-19-9225-4_17", // optional: external link if available
     },
     {
       title: "Hybrid Subset Feature Selection And Importance Framework",
@@ -157,7 +151,7 @@ const siteConfig = {
       },
       abstract:
         "Feature selection algorithms are used in high-dimensional data to remove noise...",
-      link: "#",
+      link: "https://ieeexplore.ieee.org/abstract/document/10262828",
     },
   ],
 

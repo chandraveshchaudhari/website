@@ -6,16 +6,22 @@ export const getAsset = (path: string) => {
 
 const siteConfig = {
   personal: {
-    name: 'Chandravesh Chaudhari',
-    title: 'Assistant Professor | Multimodal AI',
+    name: 'Dr. Chandravesh Chaudhari',
+    title: 'Assistant Professor | Multimodal AI Researcher',
     image: getAsset('images/profile.png'), // Resolves to /profile.png or /base-path/profile.png
-    email: 'hello@example.com',
-    location: 'India',
+    description: 'Chandravesh Chaudhari, Ph.D. is an academic and practitioner working at the intersection of business analytics, machine learning, and technology-driven decision-making. His research and teaching focus on applying data science and emerging technologies to solve complex problems in business, economics, and management.\n' +
+        '\n' +
+        'Chandravesh teaches in the School of Business and Management at Christ University, where he has guided numerous students and professionals in mastering advanced Excel, Python, machine learning, and applied analytics. He is deeply involved in curriculum design, research mentorship, and capacity building for industry-oriented business analytics education.\n' +
+        '\n' +
+        'He earned his Ph.D. from Christ University, holds an Masters in Finance, and has completed specialized certifications in analytics and programming. His academic work emphasizes bridging theoretical concepts with real-world applications, particularly in domains such as financial analytics, business intelligence, and operational optimization.\n' +
+        '\n' +
+        'Chandravesh is the author of books “Programming for Machine Learning and Business” and “Machine Learning for Business". He regularly conducts training programs and workshops for professionals and students, focusing on making advanced analytical methods accessible and impactful.',
+    tagline: 'Empowering business through data-driven intelligence.',
+  location: 'Bangalore, India',
   },
 
   seo: {
-    title: 'Chandravesh Chaudhari',
-    description: 'Official website showcasing education, research, projects and experience.',
+    description: 'Official website showcasing Dr. Chandravesh Chaudhari\'s education, research, projects and experience.',
   },
 
   animatedText: ['AI Researcher', 'Educator', 'Speaker', 'Builder'],
@@ -129,7 +135,7 @@ const siteConfig = {
       authors: "Chandravesh Chaudhari, Geetanjali Purswani",
       conferences: "Congress on Intelligent Systems, Springer Nature Singapore",
       researchYr: 2022,
-      image: "/images/research/review_paper.png",
+      image: getAsset("/images/research/review_paper.png"),
       citation: {
         vancouver:
           "Chaudhari, C., Purswani, G. (2023). Stock Market Prediction Techniques Using Artificial Intelligence: A Systematic Review. In: Kumar, S., Sharma, H., Balachandran, K., Kim, J.H., Bansal, J.C. (eds) Third Congress on Intelligent Systems. CIS 2022. Lecture Notes in Networks and Systems, vol 608. Springer, Singapore. https://doi.org/10.1007/978-981-19-9225-4_17",
@@ -144,7 +150,7 @@ const siteConfig = {
       conferences:
         "2023 IEEE International Conference on Contemporary Computing and Communications (InC4), Bangalore, India, 2023",
       researchYr: 2023,
-      image: "/images/research/subset.png",
+      image: getAsset("/images/research/subset.png"),
       citation: {
         vancouver:
           "C. Chaudhari and G. Purswani, \"Hybrid Subset Feature Selection And Importance Framework,\" 2023 IEEE International Conference on Contemporary Computing and Communications (InC4), Bangalore, India, 2023, pp. 1-6, doi: 10.1109/InC457730.2023.10262828.",
@@ -174,6 +180,8 @@ const siteConfig = {
     email: 'chandraveshchaudhari@gmail.com',
     linkedin: 'https://www.linkedin.com/in/chandravesh-chaudhari/',
     github: 'https://github.com/chandraveshchaudhari',
+    googleScholar: 'https://scholar.google.com/citations?authuser=1&user=V78qbA8AAAAJ',
+  orcid: 'https://orcid.org/0000-0003-1053-7541',
   },
 };
 

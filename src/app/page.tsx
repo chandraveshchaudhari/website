@@ -22,6 +22,7 @@ export default function Home() {
 
   return (
     <div className="py-12">
+      {/* Hero Section */}
       <motion.section
         id="home"
         initial={{ opacity: 0, y: 50 }}
@@ -31,6 +32,7 @@ export default function Home() {
         <Hero animatedText={animatedText[textIndex]} />
       </motion.section>
 
+      {/* Research Section */}
       <motion.section
         id="research"
         className="my-16"
@@ -54,6 +56,7 @@ export default function Home() {
         </div>
       </motion.section>
 
+      {/* Books Section */}
       <motion.section
         id="books"
         className="my-16"
@@ -98,6 +101,7 @@ export default function Home() {
         </div>
       </motion.section>
 
+      {/* Projects Section */}
       <motion.section
         id="projects"
         className="my-16"
@@ -111,22 +115,34 @@ export default function Home() {
           {siteConfig.projects.map((project, index) => (
             <motion.div
               key={index}
-              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ scale: 1.02 }}
             >
+              {project.cardImage && (
+                <div className="mb-4 w-full h-40 relative rounded-md overflow-hidden">
+                  <Image
+                    src={project.cardImage}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              )}
               <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
               <p className="text-lg mb-4">{project.description}</p>
-              <Link
-                href={project.link}
-                className="text-blue-500 hover:underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View Project
-              </Link>
+              {project.Githublink && (
+                <Link
+                  href={project.Githublink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:underline mt-auto"
+                >
+                  View Project →
+                </Link>
+              )}
             </motion.div>
           ))}
         </div>

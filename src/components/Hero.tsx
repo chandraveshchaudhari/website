@@ -5,7 +5,12 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { AnimatedText } from '@/types';
-import { Linkedin, Github, GraduationCap, BookUser } from 'lucide-react';
+import {
+  LinkedinIcon,
+  GithubIcon,
+  GraduationCapIcon,
+  BookUserIcon,
+} from 'lucide-react';
 
 interface HeroProps {
   animatedText: AnimatedText;
@@ -13,10 +18,18 @@ interface HeroProps {
 
 export default function Hero({ animatedText }: HeroProps) {
   const [imageError, setImageError] = useState(false);
+  const [showFullDesc, setShowFullDesc] = useState(false);
   const contact = siteConfig.contact;
+  const personal = siteConfig.personal;
+
+  const maxLength = 250;
+  const isLong = personal.description.length > maxLength;
+  const displayedDesc = showFullDesc
+    ? personal.description
+    : personal.description.slice(0, maxLength) + (isLong ? '...' : '');
 
   return (
-    <motion.section
+    <motion.header
       className="flex flex-col md:flex-row items-center justify-between py-12"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
@@ -24,8 +37,8 @@ export default function Hero({ animatedText }: HeroProps) {
     >
       {/* LEFT SIDE — TEXT */}
       <div className="md:w-1/2 mb-8 md:mb-0 space-y-3">
-        <h1 className="text-5xl font-bold">{siteConfig.personal.name}</h1>
-        <h2 className="text-3xl">{siteConfig.personal.title}</h2>
+        <h1 className="text-5xl font-bold">{personal.name}</h1>
+        <h2 className="text-3xl">{personal.title}</h2>
 
         {/* Animated text */}
         <motion.p
@@ -39,25 +52,42 @@ export default function Hero({ animatedText }: HeroProps) {
         </motion.p>
 
         {/* Tagline */}
-        {siteConfig.personal.tagline && (
+        {personal.tagline && (
           <p className="text-lg text-gray-700 dark:text-gray-300">
-            {siteConfig.personal.tagline}
+            {personal.tagline}
           </p>
         )}
 
-        {/* Contact info */}
-        <p className="text-lg">
-          Email:{' '}
-          <a
-            href={`mailto:${contact.email}`}
-            className="text-blue-500 hover:underline"
-          >
-            {contact.email}
-          </a>
-        </p>
-        {siteConfig.personal.location && (
-          <p className="text-lg">{siteConfig.personal.location}</p>
+        {/* Description */}
+        {personal.description && (
+          <div className="mt-2 text-gray-700 dark:text-gray-300 whitespace-pre-line">
+            {displayedDesc}
+            {isLong && (
+              <button
+                onClick={() => setShowFullDesc(!showFullDesc)}
+                className="text-blue-600 hover:underline ml-2"
+              >
+                {showFullDesc ? 'Show less' : 'Read more'}
+              </button>
+            )}
+          </div>
         )}
+
+        {/* Contact info */}
+        <div className="mt-4 space-y-1">
+          {contact.email && (
+            <p className="text-lg">
+              Email:{' '}
+              <a
+                href={`mailto:${contact.email}`}
+                className="text-blue-500 hover:underline"
+              >
+                {contact.email}
+              </a>
+            </p>
+          )}
+          {personal.location && <p className="text-lg">{personal.location}</p>}
+        </div>
 
         {/* Social icons row */}
         <div className="flex space-x-4 mt-4">
@@ -67,8 +97,9 @@ export default function Hero({ animatedText }: HeroProps) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
+              title="LinkedIn"
             >
-              <Linkedin className="w-6 h-6 hover:text-blue-700" />
+              <LinkedinIcon className="w-6 h-6 hover:text-blue-700" />
             </a>
           )}
           {contact.github && (
@@ -77,8 +108,9 @@ export default function Hero({ animatedText }: HeroProps) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
+              title="GitHub"
             >
-              <Github className="w-6 h-6 hover:text-gray-800 dark:hover:text-white" />
+              <GithubIcon className="w-6 h-6 hover:text-gray-800 dark:hover:text-white" />
             </a>
           )}
           {contact.googleScholar && (
@@ -87,8 +119,9 @@ export default function Hero({ animatedText }: HeroProps) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Google Scholar"
+              title="Google Scholar"
             >
-              <GraduationCap className="w-6 h-6 hover:text-blue-600" />
+              <GraduationCapIcon className="w-6 h-6 hover:text-blue-600" />
             </a>
           )}
           {contact.orcid && (
@@ -97,8 +130,9 @@ export default function Hero({ animatedText }: HeroProps) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="ORCID"
+              title="ORCID"
             >
-              <BookUser className="w-6 h-6 hover:text-green-600" />
+              <BookUserIcon className="w-6 h-6 hover:text-green-600" />
             </a>
           )}
         </div>
@@ -106,18 +140,21 @@ export default function Hero({ animatedText }: HeroProps) {
         {/* CTA buttons */}
         <div className="flex gap-4 mt-6">
           <a
-            href="/assets/CV_Chandravesh.pdf"
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+              href="/website/resume"
+              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
           >
-            View CV
+            View / Download Resume
           </a>
-          <a
-            href={`mailto:${contact.email}`}
-            className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
-          >
-            Contact Me
-          </a>
+          {contact.email && (
+              <a
+                  href={`mailto:${contact.email}`}
+                  className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+              >
+                Contact Me
+              </a>
+          )}
         </div>
+
       </div>
 
       {/* RIGHT SIDE — IMAGE */}
@@ -136,15 +173,13 @@ export default function Hero({ animatedText }: HeroProps) {
             </div>
           ) : (
             <Image
-              src={siteConfig.personal.image}
-              alt={siteConfig.personal.name}
+              src={personal.image}
+              alt={`${personal.name} — profile`}
               width={300}
               height={450}
               className="rounded-lg object-cover aspect-[2/3]"
               onError={() => {
-                console.error(
-                  `Failed to load image: ${siteConfig.personal.image}`
-                );
+                console.error(`Failed to load image: ${personal.image}`);
                 setImageError(true);
               }}
               priority
@@ -152,6 +187,6 @@ export default function Hero({ animatedText }: HeroProps) {
           )}
         </motion.div>
       </div>
-    </motion.section>
+    </motion.header>
   );
 }

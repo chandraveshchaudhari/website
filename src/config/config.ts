@@ -26,14 +26,16 @@ const siteConfig = {
 
   animatedText: ['AI Researcher', 'Educator', 'Speaker', 'Builder'],
 
-  navigation: [
-    { name: 'Home', url: '/' },
-    { name: 'Education', url: '/education' },
-    { name: 'Experience', url: '/experience' },
-    { name: 'Projects', url: '/projects' },
-    { name: 'Research', url: '/research' },
-    { name: 'Contact', url: '/contact' },
-  ],
+navigation: [
+  { name: 'Home', url: '/' },
+  { name: 'Projects', url: '/projects' },
+  { name: 'Research', url: '/research' },
+  { name: 'Education', url: '/education' },
+  { name: 'Experience', url: '/experience' },
+  { name: 'Resume', url: '/resume' },
+  { name: 'Contact', url: '/contact' },
+],
+
 
   education: [
     {

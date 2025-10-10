@@ -60,7 +60,7 @@ navigation: [
     },
     {
       institution: 'Chaudhary Charan Singh University, Meerut',
-      degree: "Master's of Commerce – Finance",
+      degree: "Masters of Commerce – Finance",
       year: '2015–2017',
       image: getAsset('images/education/CCSU-Logo.jpg'),
       description: [

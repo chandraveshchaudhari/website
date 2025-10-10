@@ -4,6 +4,7 @@ import { useState } from 'react';
 import siteConfig from "@/config/config";
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 // ✅ TypeScript interface for research data
 interface ResearchItem {
@@ -58,18 +59,19 @@ export default function ResearchPage() {
               layout
               aria-labelledby={`research-title-${index}`}
             >
-              {/* Optional image */}
-              {hasImage && (
-                <div className="mb-4 h-40 w-full overflow-hidden rounded-md">
-                  {/* If you want, can switch this to next/image */}
-                  <img
-                    src={res.image}
-                    alt={res.title}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-              )}
+                {/* Optional image */}
+                {hasImage && (
+                    <div className="mb-4 h-40 w-full overflow-hidden rounded-md">
+                        <Image
+                            src={res.image ?? '/default-image.png'}
+                            alt={res.title}
+                            width={400}
+                            height={250}
+                            className="rounded-lg"
+                        />
+                    </div>
+                )}
+
 
               <h2
                 id={`research-title-${index}`}

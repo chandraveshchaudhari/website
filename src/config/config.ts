@@ -21,6 +21,7 @@ const siteConfig = {
   },
 
   seo: {
+    title: "Dr. Chandravesh Chaudhari - Assistant Professor & AI Researcher",
     description: 'Official website showcasing Dr. Chandravesh Chaudhari\'s education, research, projects and experience.',
   },
 

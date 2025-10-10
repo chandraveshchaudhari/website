@@ -59,10 +59,12 @@ export default function ExperiencePage() {
             </p>
 
             {/* Description */}
-            {exp.desp && (
-              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed text-center">
-                {exp.desp}
-              </p>
+            {exp.desp && exp.desp.length > 0 && (
+              <ul className="list-disc list-inside text-sm text-gray-600 dark:text-gray-400 leading-relaxed mt-2">
+                {exp.desp.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
             )}
           </motion.div>
         ))}

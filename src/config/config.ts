@@ -91,23 +91,28 @@ navigation: [
 
   // ✅ Experience section updated
   experience: [
-    {
-      title: "Assistant Professor",
-      cardImage: getAsset("images/experience/Christ_University.png"),
-      place: "Christ University",
-      time: "(May 2025 – Present)",
-      desp: `<li>Teaching: Predictive Analytics, Financial Forecasting</li>
-             <li>Developed automated Excel assignment checker</li>`,
-    },
-    {
-      title: "Teaching Assistant",
-      cardImage: getAsset("images/experience/Christ_University.png"),
-      place: "Christ University",
-      time: "(May 2022 – Dec 2024)",
-      desp: `<li>Courses handled: Computer Applications in Business, Excel, E-commerce</li>
-             <li>Guided practical data analysis projects</li>`,
-    },
-  ],
+  {
+    title: "Assistant Professor",
+    cardImage: getAsset("images/experience/Christ_University.png"),
+    place: "Christ University",
+    time: "(May 2025 – Present)",
+    desp: [
+      "Teaching: Predictive Analytics, Financial Forecasting",
+      "Developed automated Excel assignment checker",
+    ],
+  },
+  {
+    title: "Teaching Assistant",
+    cardImage: getAsset("images/experience/Christ_University.png"),
+    place: "Christ University",
+    time: "(May 2022 – Dec 2024)",
+    desp: [
+      "Courses handled: Computer Applications in Business, Excel, E-commerce",
+      "Guided practical data analysis projects",
+    ],
+  },
+],
+
 
   // ✅ Projects section updated
   projects: [

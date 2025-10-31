@@ -5,7 +5,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import siteConfig from "@/config/config";
-import { Certification } from "@/types";
+import type { Certification } from "@/types";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -14,15 +14,28 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 
+/* -------------------------------------------------------------------------- */
+/*  Proper type for Specialization – NO `any`                                 */
+/* -------------------------------------------------------------------------- */
+type SubCertificate = {
+  name: string;
+  file: string;
+};
+
+type Specialization = {
+  title: string;
+  cardImage: string;
+  certificates: SubCertificate[];
+};
+
+const isSpecialization = (cert: Certification): cert is Specialization =>
+  "certificates" in cert && Array.isArray((cert as Specialization).certificates);
+
 export default function EducationPage() {
   const allCerts = siteConfig.certifications ?? [];
 
   const [filter, setFilter] = useState<"all" | "specialization" | "individual">("all");
-  const [selectedSpec, setSelectedSpec] = useState<Extract<Certification, { certificates: any[] }> | null>(null);
-
-  // Structural type guard
-  const isSpecialization = (cert: Certification): cert is Extract<Certification, { certificates: any[] }> =>
-    "certificates" in cert && Array.isArray(cert.certificates);
+  const [selectedSpec, setSelectedSpec] = useState<Specialization | null>(null);
 
   const filteredCerts = allCerts.filter((cert) => {
     if (filter === "specialization") return isSpecialization(cert);
@@ -47,7 +60,11 @@ export default function EducationPage() {
             variant={filter === key ? "default" : "outline"}
             onClick={() => setFilter(key)}
           >
-            {key === "all" ? "All" : key === "specialization" ? "Specializations" : "Individual Courses"}
+            {key === "all"
+              ? "All"
+              : key === "specialization"
+              ? "Specializations"
+              : "Individual Courses"}
           </Button>
         ))}
       </div>
@@ -58,11 +75,13 @@ export default function EducationPage() {
             key={idx}
             whileHover={{ scale: 1.03 }}
             className="bg-white dark:bg-gray-900 rounded-2xl shadow-md hover:shadow-lg transition p-5 cursor-pointer border border-gray-200 dark:border-gray-700"
-            onClick={() =>
-              isSpecialization(cert)
-                ? setSelectedSpec(cert)
-                : "file" in cert && window.open(cert.file, "_blank")
-            }
+            onClick={() => {
+              if (isSpecialization(cert)) {
+                setSelectedSpec(cert);
+              } else if ("file" in cert) {
+                window.open(cert.file, "_blank");
+              }
+            }}
           >
             <div className="flex flex-col items-center text-center">
               <div className="w-32 h-32 relative mb-4">
@@ -73,6 +92,7 @@ export default function EducationPage() {
                   className="object-contain rounded-lg"
                 />
               </div>
+
               <h3 className="text-lg font-semibold mb-2">{cert.title}</h3>
 
               {isSpecialization(cert) ? (
@@ -85,7 +105,9 @@ export default function EducationPage() {
                   className="text-blue-600 dark:text-blue-400 p-0"
                   onClick={(e) => {
                     e.stopPropagation();
-                    "file" in cert && window.open(cert.file, "_blank");
+                    if ("file" in cert) {
+                      window.open(cert.file, "_blank");
+                    }
                   }}
                 >
                   View Certificate
@@ -102,6 +124,7 @@ export default function EducationPage() {
             <DialogHeader>
               <DialogTitle>{selectedSpec.title}</DialogTitle>
             </DialogHeader>
+
             <div className="grid grid-cols-1 gap-3 mt-4">
               {selectedSpec.certificates.map((subCert, index) => (
                 <div

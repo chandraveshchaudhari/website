@@ -55,6 +55,29 @@ export interface Contact {
   github: string;
 }
 
+/* ✅ Fixed Certification typing using discriminated union */
+
+export interface CertificateItem {
+  name: string;
+  file: string;
+}
+
+export interface SingleCertification {
+  title: string;
+  cardImage: string;
+  specialization: false;
+  file: string;
+}
+
+export interface SpecializationCertification {
+  title: string;
+  cardImage: string;
+  specialization: true;
+  certificates: CertificateItem[];
+}
+
+export type Certification = SingleCertification | SpecializationCertification;
+
 export interface SiteConfig {
   personal: Personal;
   seo: SEO;
@@ -66,4 +89,5 @@ export interface SiteConfig {
   research: Research[];
   books: Book[];
   contact: Contact;
+  certifications: Certification[];
 }

@@ -70,24 +70,142 @@ navigation: [
     },
   ],
 
-  // ✅ Add MOOC cards here
-  moocscards: [
-    {
-      title: "TensorFlow Developer Professional Certificate",
-      cardImage: getAsset("images/education/tensorflow.png"),
-      moocLink: "https://www.coursera.org/account/accomplishments/professional-cert/LDCLR9ZZJXDD",
-    },
-    {
-      title: "Deep Learning Specialization (DeepLearning.AI)",
-      cardImage: getAsset("images/education/deeplearning.png"),
-      moocLink: "https://www.coursera.org/account/accomplishments/specialization/NKYUMBACQN63",
-    },
-    {
-      title: "Mathematics for Machine Learning Specialization (Imperial College London)",
-      cardImage: getAsset("images/education/math.png"),
-      moocLink: "https://www.coursera.org/account/accomplishments/specialization/6RUU8V5QKFAP",
-    },
-  ],
+// ✅ Unified MOOC + Certifications Section
+certifications: [
+  // --- Deep Learning Specialization ---
+  {
+    title: "Deep Learning Specialization (DeepLearning.AI)",
+    cardImage: getAsset("images/education/deeplearning.png"),
+    specialization: true,
+    certificates: [
+      {
+        name: "Neural Networks and Deep Learning",
+        file: getAsset("images/education/Certifications/Coursera_J6GPUSMW3VKC.pdf"),
+      },
+      {
+        name: "Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization",
+        file: getAsset("images/education/Certifications/Coursera_JMXKFQFCWXH7.pdf"),
+      },
+      {
+        name: "Structuring Machine Learning Projects",
+        file: getAsset("images/education/Certifications/Coursera_KPXWY5B55YPC.pdf"),
+      },
+      {
+        name: "Convolutional Neural Networks",
+        file: getAsset("images/education/Certifications/Coursera_NKYUMBACQN63.pdf"),
+      },
+    ],
+  },
+
+  // --- Mathematics for Machine Learning Specialization ---
+  {
+    title: "Mathematics for Machine Learning Specialization (Imperial College London)",
+    cardImage: getAsset("images/education/math.png"),
+    specialization: true,
+    certificates: [
+      {
+        name: "Linear Algebra",
+        file: getAsset("images/education/Certifications/Coursera_6RUU8V5QKFAP.pdf"),
+      },
+      {
+        name: "Multivariate Calculus",
+        file: getAsset("images/education/Certifications/Coursera_7YYGH7X2UNEU.pdf"),
+      },
+      {
+        name: "Principal Component Analysis",
+        file: getAsset("images/education/Certifications/Coursera_53DVUXY5XY7T.pdf"),
+      },
+    ],
+  },
+
+  // --- Applied Data Science with Python Specialization ---
+  {
+    title: "Applied Data Science with Python Specialization (University of Michigan)",
+    cardImage: getAsset("images/education/datascience.png"),
+    specialization: true,
+    certificates: [
+      {
+        name: "Introduction to Data Science in Python",
+        file: getAsset("images/education/Certifications/Coursera_EXBUSMTP4GZY.pdf"),
+      },
+      {
+        name: "Applied Plotting, Charting & Data Representation in Python",
+        file: getAsset("images/education/Certifications/Coursera_E3PAHPZXLUBU.pdf"),
+      },
+      {
+        name: "Applied Machine Learning in Python",
+        file: getAsset("images/education/Certifications/Coursera_B2V9MYGKL689.pdf"),
+      },
+      {
+        name: "Applied Text Mining in Python",
+        file: getAsset("images/education/Certifications/Coursera_CNR23W7DSUYZ.pdf"),
+      },
+    ],
+  },
+
+  // --- TensorFlow Developer Professional Certificate ---
+  {
+    title: "TensorFlow Developer Professional Certificate",
+    cardImage: getAsset("images/education/tensorflow.png"),
+    file: getAsset("images/education/Certifications/Coursera_LDCLR9ZZJXDD.pdf"),
+  },
+
+  // --- Individual Certificates ---
+  {
+    title: "Python for Everybody",
+    cardImage: getAsset("images/education/Python_certificate.jpg"),
+    file: getAsset("images/education/Certifications/Coursera_PS4RNI0GLH9C.pdf"),
+  },
+  {
+    title: "SQL for Data Analysis",
+    cardImage: getAsset("images/education/SQL_certificate.jpg"),
+    file: getAsset("images/education/Certifications/Coursera_PRH99C6AHR3N.pdf"),
+  },
+  {
+    title: "Machine Learning (Stanford Online)",
+    cardImage: getAsset("images/education/Certifications/Coursera_Z53PTM2G5AHU.pdf"),
+    file: getAsset("images/education/Certifications/Coursera_Z53PTM2G5AHU.pdf"),
+  },
+  {
+    title: "Python for Data Visualization",
+    cardImage: getAsset("images/education/Certifications/Coursera_VG7C569DCS34.pdf"),
+    file: getAsset("images/education/Certifications/Coursera_VG7C569DCS34.pdf"),
+  },
+  {
+    title: "Java Programming",
+    cardImage: getAsset("images/education/Java_certificate.jpg"),
+    file: getAsset("images/education/Certifications/Java_certificate.jpg"),
+  },
+  {
+    title: "HTML Fundamentals",
+    cardImage: getAsset("images/education/HTML_certificate.jpg"),
+    file: getAsset("images/education/Certifications/HTML_certificate.jpg"),
+  },
+  {
+    title: "Clarivate Research Metrics Workshop",
+    cardImage: getAsset("images/education/Certifications/e-Certificate clarivate.pdf"),
+    file: getAsset("images/education/Certifications/e-Certificate clarivate.pdf"),
+  },
+  {
+    title: "Intellectual Property Rights Workshop",
+    cardImage: getAsset("images/education/Certifications/chandravesh chaudhari IPR Workshop Certificate.pdf"),
+    file: getAsset("images/education/Certifications/chandravesh chaudhari IPR Workshop Certificate.pdf"),
+  },
+  {
+    title: "Faculty Development Program (6-Day Online)",
+    cardImage: getAsset("images/education/Certifications/Certificate for chandravesh chaudhari for _6-Day Online Faculty Develo..._.pdf"),
+    file: getAsset("images/education/Certifications/Certificate for chandravesh chaudhari for _6-Day Online Faculty Develo..._.pdf"),
+  },
+  {
+    title: "Microsoft Certified: Data Analyst Associate",
+    cardImage: getAsset("images/education/Certifications/MicrosoftCertificate.pdf"),
+    file: getAsset("images/education/Certifications/MicrosoftCertificate.pdf"),
+  },
+],
+
+
+
+
 
   // ✅ Experience section updated
   experience: [

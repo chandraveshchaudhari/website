@@ -1,9 +1,10 @@
+// src/app/education/page.tsx
 "use client";
 
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import siteConfig from "@/config/config"; // ✅ your config file path
+import siteConfig from "@/config/config";
 import { Certification } from "@/types";
 import { Button } from "@/components/ui/button";
 import {
@@ -17,23 +18,20 @@ export default function EducationPage() {
   const allCerts = siteConfig.certifications ?? [];
 
   const [filter, setFilter] = useState<"all" | "specialization" | "individual">("all");
-  const [selectedSpec, setSelectedSpec] = useState<Certification | null>(null);
+  const [selectedSpec, setSelectedSpec] = useState<Extract<Certification, { certificates: any[] }> | null>(null);
+
+  // Structural type guard
+  const isSpecialization = (cert: Certification): cert is Extract<Certification, { certificates: any[] }> =>
+    "certificates" in cert && Array.isArray(cert.certificates);
 
   const filteredCerts = allCerts.filter((cert) => {
-    if (filter === "specialization") return cert.specialization === true;
-    if (filter === "individual") return cert.specialization === false;
+    if (filter === "specialization") return isSpecialization(cert);
+    if (filter === "individual") return "file" in cert;
     return true;
   });
 
-  // ✅ Type guard to narrow specialization types
-  const isSpecialization = (
-    cert: Certification
-  ): cert is Extract<Certification, { specialization: true }> =>
-    cert.specialization === true;
-
   return (
     <main className="py-12">
-      {/* ✅ Page Title */}
       <motion.h1
         className="text-4xl font-bold mb-8 text-center"
         initial={{ opacity: 0, y: -20 }}
@@ -42,7 +40,6 @@ export default function EducationPage() {
         MOOCs & Certifications
       </motion.h1>
 
-      {/* ✅ Filter Buttons */}
       <div className="flex justify-center gap-4 mb-10">
         {(["all", "specialization", "individual"] as const).map((key) => (
           <Button
@@ -50,16 +47,11 @@ export default function EducationPage() {
             variant={filter === key ? "default" : "outline"}
             onClick={() => setFilter(key)}
           >
-            {key === "all"
-              ? "All"
-              : key === "specialization"
-              ? "Specializations"
-              : "Individual Courses"}
+            {key === "all" ? "All" : key === "specialization" ? "Specializations" : "Individual Courses"}
           </Button>
         ))}
       </div>
 
-      {/* ✅ Certificates Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 md:px-12">
         {filteredCerts.map((cert, idx) => (
           <motion.div
@@ -69,7 +61,7 @@ export default function EducationPage() {
             onClick={() =>
               isSpecialization(cert)
                 ? setSelectedSpec(cert)
-                : window.open(cert.file, "_blank")
+                : "file" in cert && window.open(cert.file, "_blank")
             }
           >
             <div className="flex flex-col items-center text-center">
@@ -93,7 +85,7 @@ export default function EducationPage() {
                   className="text-blue-600 dark:text-blue-400 p-0"
                   onClick={(e) => {
                     e.stopPropagation();
-                    window.open(cert.file, "_blank");
+                    "file" in cert && window.open(cert.file, "_blank");
                   }}
                 >
                   View Certificate
@@ -104,8 +96,7 @@ export default function EducationPage() {
         ))}
       </div>
 
-      {/* ✅ Modal for Specialization Details */}
-      {selectedSpec && isSpecialization(selectedSpec) && (
+      {selectedSpec && (
         <Dialog open={!!selectedSpec} onOpenChange={() => setSelectedSpec(null)}>
           <DialogContent className="max-w-2xl">
             <DialogHeader>

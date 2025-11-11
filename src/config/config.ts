@@ -33,9 +33,19 @@ navigation: [
   { name: 'Research', url: '/research' },
   { name: 'Education', url: '/education' },
   { name: 'Experience', url: '/experience' },
+  { name: 'Blogs', url: '/blogs' },
   { name: 'Resume', url: '/resume' },
   { name: 'Contact', url: '/contact' },
 ],
+
+  // Static blog entries. Use getAsset so the URL respects NEXT_PUBLIC_BASE_PATH / next.config.basePath
+  // Add more entries here as you add more static HTML blog files under public/static_page/
+  blogs: [
+    {
+      title: 'Project Management Mastery',
+      url: getAsset('static_page/project_management_blog.html'),
+    },
+  ],
 
 
   education: [
@@ -202,9 +212,6 @@ certifications: [
     file: getAsset("images/education/Certifications/MicrosoftCertificate.pdf"),
   },
 ],
-
-
-
 
 
   // ✅ Experience section updated

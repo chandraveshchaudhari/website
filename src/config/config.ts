@@ -82,136 +82,126 @@ navigation: [
 
 // ✅ Unified MOOC + Certifications Section
 certifications: [
-  // --- Deep Learning Specialization ---
+  // --- Deep Learning Specialization (DeepLearning.AI) ---
+    // --- Deep Learning Specialization (DeepLearning.AI) ---
   {
     title: "Deep Learning Specialization (DeepLearning.AI)",
-    cardImage: getAsset("images/education/deeplearning.png"),
     specialization: true,
+    file: getAsset("images/education/Certifications/deep learning specialisation: Neural Networks and Deep Learning Improving Deep Neural Networks Hyperparameter tuning Regularization and Optimization Structuring Machine Learning Projects Convolutional Neural Networks Sequence Models.pdf"),
     certificates: [
-      {
-        name: "Neural Networks and Deep Learning",
-        file: getAsset("images/education/Certifications/Coursera_J6GPUSMW3VKC.pdf"),
-      },
-      {
-        name: "Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization",
-        file: getAsset("images/education/Certifications/Coursera_JMXKFQFCWXH7.pdf"),
-      },
-      {
-        name: "Structuring Machine Learning Projects",
-        file: getAsset("images/education/Certifications/Coursera_KPXWY5B55YPC.pdf"),
-      },
-      {
-        name: "Convolutional Neural Networks",
-        file: getAsset("images/education/Certifications/Coursera_NKYUMBACQN63.pdf"),
-      },
+      { name: "Neural Networks and Deep Learning", file: getAsset("images/education/Certifications/deep learning Neural Networks and Deep Learning.pdf") },
+      { name: "Improving Deep Neural Networks", file: getAsset("images/education/Certifications/deep learning: Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization.pdf") },
+      { name: "Structuring Machine Learning Projects", file: getAsset("images/education/Certifications/deep learning ai structuring ML projects.pdf") },
+      { name: "Convolutional Neural Networks", file: getAsset("images/education/Certifications/deep learning Convolutional Neural Networks.pdf") },
+      { name: "Sequence Models", file: getAsset("images/education/Certifications/deep learning sequence models.pdf") },
     ],
   },
 
-  // --- Mathematics for Machine Learning Specialization ---
+  // --- TensorFlow Developer Specialization (DeepLearning.AI) ---
+  {
+    title: "TensorFlow Developer Professional Certificate (DeepLearning.AI)",
+    specialization: true,
+    file: getAsset("images/education/Certifications/deep learning specialisation: Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning Convolutional Neural Networks in TensorFlow Natural Language Processing in TensorFlow Sequences, Time Series and Prediction.pdf"),
+    certificates: [
+      { name: "Introduction to TensorFlow for AI", file: getAsset("images/education/Certifications/deep learning ai Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning.pdf") },
+      { name: "Convolutional Neural Networks in TensorFlow", file: getAsset("images/education/Certifications/deep learning Convolutional Neural Networks in TensorFlow.pdf") },
+      { name: "Natural Language Processing in TensorFlow", file: getAsset("images/education/Certifications/deep learning ai Natural language processing in tensorflow.pdf") },
+      { name: "Sequences, Time Series and Prediction", file: getAsset("images/education/Certifications/deeplearning ai: Sequences, time series and prediction.pdf") },
+    ],
+  },
+
+  // --- Mathematics for Machine Learning (Imperial College London) ---
   {
     title: "Mathematics for Machine Learning Specialization (Imperial College London)",
-    cardImage: getAsset("images/education/math.png"),
     specialization: true,
+    file: getAsset("images/education/Certifications/specialisation: mathematics for ML: 3 courses.pdf"),
     certificates: [
-      {
-        name: "Linear Algebra",
-        file: getAsset("images/education/Certifications/Coursera_6RUU8V5QKFAP.pdf"),
-      },
-      {
-        name: "Multivariate Calculus",
-        file: getAsset("images/education/Certifications/Coursera_7YYGH7X2UNEU.pdf"),
-      },
-      {
-        name: "Principal Component Analysis",
-        file: getAsset("images/education/Certifications/Coursera_53DVUXY5XY7T.pdf"),
-      },
+      { name: "Linear Algebra", file: getAsset("images/education/Certifications/Imperial college london: M a t h e m a t i c s   f o r   M a c h i n e   L e a r n i n g :   L i n e a r  A l g e b r a.pdf") },
+      { name: "Multivariate Calculus", file: getAsset("images/education/Certifications/imperial college london: M a t h e m a t i c s   f o r   M a c h i n e   L e a r n i n g :   M u l t i v a r i a t e  C a l c u l u s.pdf") },
+      { name: "Principal Component Analysis", file: getAsset("images/education/Certifications/Imperial college london: M a t h e m a t i c s   f o r   M a c h i n e   L e a r n i n g :   P C A.pdf") },
     ],
   },
 
-  // --- Applied Data Science with Python Specialization ---
+  // --- University of Michigan ---
   {
-    title: "Applied Data Science with Python Specialization (University of Michigan)",
-    cardImage: getAsset("images/education/datascience.png"),
-    specialization: true,
-    certificates: [
-      {
-        name: "Introduction to Data Science in Python",
-        file: getAsset("images/education/Certifications/Coursera_EXBUSMTP4GZY.pdf"),
-      },
-      {
-        name: "Applied Plotting, Charting & Data Representation in Python",
-        file: getAsset("images/education/Certifications/Coursera_E3PAHPZXLUBU.pdf"),
-      },
-      {
-        name: "Applied Machine Learning in Python",
-        file: getAsset("images/education/Certifications/Coursera_B2V9MYGKL689.pdf"),
-      },
-      {
-        name: "Applied Text Mining in Python",
-        file: getAsset("images/education/Certifications/Coursera_CNR23W7DSUYZ.pdf"),
-      },
-    ],
+    title: "Introduction to Data Science in Python (University of Michigan)",
+    file: getAsset("images/education/Certifications/university of michigan: Introduction to Data Science in Python.pdf"),
   },
 
-  // --- TensorFlow Developer Professional Certificate ---
+  // --- Duke University ---
   {
-    title: "TensorFlow Developer Professional Certificate",
-    cardImage: getAsset("images/education/tensorflow.png"),
-    file: getAsset("images/education/Certifications/Coursera_LDCLR9ZZJXDD.pdf"),
+    title: "Business Metrics for Data-Driven Companies (Duke University)",
+  cardImage: getAsset("images/education/Certifications/download.svg"),
+    file: getAsset("images/education/Certifications/Duke university: Business metrics for Data-driven companies.pdf"),
+  },
+  {
+    title: "Mastering Data Analysis in Excel (Duke University)",
+  cardImage: getAsset("images/education/Certifications/download.svg"),
+    file: getAsset("images/education/Certifications/Duke university: Mastering Data Analysis in Excel.pdf"),
   },
 
-  // --- Individual Certificates ---
+  // --- Corporate Finance Institute (CFI) ---
   {
-    title: "Python for Everybody",
-    cardImage: getAsset("images/education/Python_certificate.jpg"),
-    file: getAsset("images/education/Certifications/Coursera_PS4RNI0GLH9C.pdf"),
+    title: "Accounting Fundamentals (CFI)",
+  cardImage: getAsset("images/education/Certifications/download.svg"),
+    file: getAsset("images/education/Certifications/corporate finance institure: accounting fundamentals.pdf"),
   },
   {
-    title: "SQL for Data Analysis",
-    cardImage: getAsset("images/education/SQL_certificate.jpg"),
-    file: getAsset("images/education/Certifications/Coursera_PRH99C6AHR3N.pdf"),
+    title: "Excel Crash Course (CFI)",
+  cardImage: getAsset("images/education/Certifications/download.svg"),
+    file: getAsset("images/education/Certifications/corporate finance institute excel crash course.pdf"),
   },
   {
-    title: "Machine Learning (Stanford Online)",
-    cardImage: getAsset("images/education/Certifications/Coursera_Z53PTM2G5AHU.pdf"),
-    file: getAsset("images/education/Certifications/Coursera_Z53PTM2G5AHU.pdf"),
+    title: "Reading Financial Statements (CFI)",
+  cardImage: getAsset("images/education/Certifications/download.svg"),
+    file: getAsset("images/education/Certifications/corporate finance institute reading financial statements.pdf"),
+  },
+
+  // --- SoloLearn Programming Courses ---
+  {
+    title: "Python 3 Tutorial (SoloLearn)",
+    file: getAsset("images/education/Certifications/sololearn python 3 tutorial course.jpg"),
   },
   {
-    title: "Python for Data Visualization",
-    cardImage: getAsset("images/education/Certifications/Coursera_VG7C569DCS34.pdf"),
-    file: getAsset("images/education/Certifications/Coursera_VG7C569DCS34.pdf"),
+    title: "Java Tutorial (SoloLearn)",
+    file: getAsset("images/education/Certifications/sololearn java tutorial course.jpg"),
   },
   {
-    title: "Java Programming",
-    cardImage: getAsset("images/education/Java_certificate.jpg"),
-    file: getAsset("images/education/Certifications/Java_certificate.jpg"),
+    title: "SQL Fundamentals (SoloLearn)",
+    file: getAsset("images/education/Certifications/sololearn sql fundamental course.jpg"),
   },
   {
-    title: "HTML Fundamentals",
-    cardImage: getAsset("images/education/HTML_certificate.jpg"),
-    file: getAsset("images/education/Certifications/HTML_certificate.jpg"),
+    title: "HTML Fundamentals (SoloLearn)",
+    file: getAsset("images/education/Certifications/sololearn HTML fundamentals course.jpg"),
+  },
+
+  // --- Additional Workshops & Achievements ---
+  {
+    title: "Intellectual Property Rights Workshop (Central University of Haryana)",
+  cardImage: getAsset("images/education/Certifications/download.svg"),
+    file: getAsset("images/education/Certifications/central university of haryana: intellectual property rights.pdf"),
   },
   {
-    title: "Clarivate Research Metrics Workshop",
-    cardImage: getAsset("images/education/Certifications/e-Certificate clarivate.pdf"),
-    file: getAsset("images/education/Certifications/e-Certificate clarivate.pdf"),
+    title: "Clarivate Journal Citation Reports Workshop",
+  cardImage: getAsset("images/education/Certifications/download.svg"),
+    file: getAsset("images/education/Certifications/Journal citation reports: clarivate.pdf"),
   },
   {
-    title: "Intellectual Property Rights Workshop",
-    cardImage: getAsset("images/education/Certifications/chandravesh chaudhari IPR Workshop Certificate.pdf"),
-    file: getAsset("images/education/Certifications/chandravesh chaudhari IPR Workshop Certificate.pdf"),
+    title: "IEEE Bangalore: Role of IEEE in Engineering",
+  cardImage: getAsset("images/education/Certifications/download.svg"),
+    file: getAsset("images/education/Certifications/IEEE bangalore section role of ieee in engineering.pdf"),
   },
   {
-    title: "Faculty Development Program (6-Day Online)",
-    cardImage: getAsset("images/education/Certifications/Certificate for chandravesh chaudhari for _6-Day Online Faculty Develo..._.pdf"),
-    file: getAsset("images/education/Certifications/Certificate for chandravesh chaudhari for _6-Day Online Faculty Develo..._.pdf"),
+    title: "Microsoft AI Classroom Series",
+  cardImage: getAsset("images/education/Certifications/download.svg"),
+    file: getAsset("images/education/Certifications/Microsoft ai classroom series certificate.pdf"),
   },
   {
-    title: "Microsoft Certified: Data Analyst Associate",
-    cardImage: getAsset("images/education/Certifications/MicrosoftCertificate.pdf"),
-    file: getAsset("images/education/Certifications/MicrosoftCertificate.pdf"),
+    title: "HackerRank SQL (Basic)",
+    file: getAsset("images/education/Certifications/HackerRank SQL basic.png"),
   },
 ],
+
 
 
   // ✅ Experience section updated

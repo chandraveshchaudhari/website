@@ -5,7 +5,9 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import siteConfig from "@/config/config";
+import { getAsset } from "@/config/config";
 import type { Certification } from "@/types";
+import { getThumbnailPath } from "@/lib/cert-thumbnails";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -24,7 +26,8 @@ type SubCertificate = {
 
 type Specialization = {
   title: string;
-  cardImage: string;
+  cardImage?: string;
+  file?: string;
   certificates: SubCertificate[];
 };
 
@@ -39,9 +42,64 @@ export default function EducationPage() {
 
   const filteredCerts = allCerts.filter((cert) => {
     if (filter === "specialization") return isSpecialization(cert);
-    if (filter === "individual") return "file" in cert;
+    if (filter === "individual") return !isSpecialization(cert) && "file" in cert;
     return true;
   });
+
+  function CertificateThumb({ cert, alt }: { cert: Certification; alt: string }) {
+    // Build a queue of candidate sources to try in order.
+    const isImgPathLocal = (p?: string) => !!p && /\.(png|jpe?g|webp|avif|svg)$/i.test(p);
+
+    const queue: string[] = [];
+
+    // Try to get thumbnail for the certificate file (individual or first in specialization)
+    let sourceFile: string | undefined;
+    if (!isSpecialization(cert) && "file" in cert && cert.file) {
+      sourceFile = cert.file;
+    } else if (isSpecialization(cert) && cert.certificates.length > 0) {
+      sourceFile = cert.certificates[0].file;
+    }
+
+    if (sourceFile) {
+      // Extract just the filename (remove the /images/education/Certifications/ prefix if present)
+      const filename = sourceFile.split('/').pop();
+      if (filename) {
+        const thumbPath = getThumbnailPath(filename);
+        if (thumbPath) {
+          queue.push(getAsset(thumbPath));
+        }
+      }
+      // Also try the original if it's an image
+      if (isImgPathLocal(sourceFile)) {
+        queue.push(sourceFile);
+      }
+    }
+
+    // Try cardImage if it exists and is a real image (not generic download)
+    if (cert.cardImage && isImgPathLocal(cert.cardImage)) {
+      queue.push(cert.cardImage);
+    }
+
+    // Final fallback: generic download icon
+    queue.push(getAsset('images/education/Certifications/download.svg'));
+
+    const [attempt, setAttempt] = useState(0);
+    const src = queue[attempt] || getAsset('images/education/Certifications/download.svg');
+
+    return (
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        className="object-contain rounded-lg"
+        onError={() => {
+          if (attempt < queue.length - 1) {
+            setAttempt((a) => a + 1);
+          }
+        }}
+      />
+    );
+  }
 
   return (
     <main className="py-12">
@@ -85,20 +143,29 @@ export default function EducationPage() {
           >
             <div className="flex flex-col items-center text-center">
               <div className="w-32 h-32 relative mb-4">
-                <Image
-                  src={cert.cardImage}
-                  alt={cert.title}
-                  fill
-                  className="object-contain rounded-lg"
-                />
+                <CertificateThumb cert={cert} alt={cert.title} />
               </div>
 
               <h3 className="text-lg font-semibold mb-2">{cert.title}</h3>
-
               {isSpecialization(cert) ? (
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  View specialization details
-                </p>
+                <div className="flex flex-col items-center gap-2">
+                  <p className="text-sm text-gray-600 dark:text-gray-400">View specialization details</p>
+                  {"file" in cert && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        // open the combined specialization pdf if present
+                        // cert is a specialization here
+                        const s = cert as Specialization;
+                        if (s.file) window.open(s.file, "_blank");
+                      }}
+                    >
+                      View Full Specialization
+                    </Button>
+                  )}
+                </div>
               ) : (
                 <Button
                   variant="link"
@@ -142,6 +209,16 @@ export default function EducationPage() {
                 </div>
               ))}
             </div>
+            {selectedSpec.file && (
+              <div className="mt-4 flex justify-end">
+                <Button
+                  variant="default"
+                  onClick={() => window.open(selectedSpec.file, "_blank")}
+                >
+                  View Full Specialization Certificate
+                </Button>
+              </div>
+            )}
           </DialogContent>
         </Dialog>
       )}

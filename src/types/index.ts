@@ -62,12 +62,12 @@ export interface Contact {
 export type Certification =
   | {
       title: string;
-      cardImage: string;
+      cardImage?: string;
       certificates: { name: string; file: string }[];
     }
   | {
       title: string;
-      cardImage: string;
+      cardImage?: string;
       file: string;
     };
 

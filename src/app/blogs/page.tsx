@@ -1,6 +1,12 @@
+
 import fs from 'fs';
 import path from 'path';
 import siteConfig from '@/config/config';
+
+type BlogConfig = {
+  title?: string;
+  url: string;
+};
 
 export default async function BlogsPage() {
   // Look for static HTML blog files under public/static_page or public/website/static_page
@@ -29,11 +35,13 @@ export default async function BlogsPage() {
   }
 
   // If siteConfig.blogs is provided, prefer it — it already contains correct URLs via getAsset
-  const configBlogs = Array.isArray((siteConfig as any).blogs) ? (siteConfig as any).blogs : [];
+  const configBlogs: BlogConfig[] = Array.isArray((siteConfig as { blogs?: unknown }).blogs)
+    ? (siteConfig as { blogs: BlogConfig[] }).blogs
+    : [];
 
-  const files =
+  const files: (string | BlogConfig)[] =
     configBlogs.length > 0
-      ? configBlogs.map((b: any) => ({ filename: b.title || path.basename(b.url), url: b.url }))
+      ? configBlogs.map((b) => ({ filename: b.title || path.basename(b.url), url: b.url }))
       : fs.readdirSync(foundDir).filter((f) => f.toLowerCase().endsWith('.html'));
 
   // Determine URL base for links (handles basePath like /website)
@@ -44,14 +52,16 @@ export default async function BlogsPage() {
     return '';
   })();
 
-  const prettyTitle = (item: any) => {
-    if (typeof item === 'object' && item.title) return item.title;
-    const filename = typeof item === 'string' ? item : item.filename || '';
+  const prettyTitle = (item: string | BlogConfig | { filename?: string; title?: string }): string => {
+    if (typeof item === 'object' && 'title' in item && item.title) return item.title;
+    let filename = '';
+    if (typeof item === 'string') filename = item;
+    else if ('filename' in item && item.filename) filename = item.filename;
     const name = filename.replace(/\.html$/i, '');
     return name
-    .replace(/[-_]+/g, ' ')
-    .split(' ')
-    .map((s: string) => (s.length ? s[0].toUpperCase() + s.slice(1) : ''))
+      .replace(/[-_]+/g, ' ')
+      .split(' ')
+      .map((s: string) => (s.length ? s[0].toUpperCase() + s.slice(1) : ''))
       .join(' ');
   };
 
@@ -64,27 +74,27 @@ export default async function BlogsPage() {
       </div>
 
       <div className="mt-8 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-  {files.map((f: any) => {
-          const isConfigItem = typeof f === 'object' && f.url;
-          const href = isConfigItem ? f.url : `${urlBase}/static_page/${f}`;
-          const displayName = prettyTitle(isConfigItem ? f : f);
-          const raw = isConfigItem ? f.url : f;
-          return (
-            <div key={raw} className="border rounded-lg p-4 bg-white/5 hover:shadow-lg">
-              <h2 className="text-lg font-semibold">{displayName}</h2>
-              <div className="mt-4">
-                <a
-                  href={href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-block px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-500"
-                >
-                  Open
-                </a>
-              </div>
-            </div>
-          );
-        })}
+  {files.map((f) => {
+    const isConfigItem = typeof f === 'object' && 'url' in f;
+    const href = isConfigItem ? (f as BlogConfig).url : `${urlBase}/static_page/${f}`;
+    const displayName = prettyTitle(f);
+    const raw = isConfigItem ? (f as BlogConfig).url : f;
+    return (
+      <div key={raw as string} className="border rounded-lg p-4 bg-white/5 hover:shadow-lg">
+        <h2 className="text-lg font-semibold">{displayName}</h2>
+        <div className="mt-4">
+          <a
+            href={href}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-block px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-500"
+          >
+            Open
+          </a>
+        </div>
+      </div>
+    );
+  })}
       </div>
     </div>
   );

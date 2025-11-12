@@ -10,6 +10,7 @@ import Link from 'next/link';
 export default function Home() {
   const animatedText = siteConfig.animatedText;
   const books = siteConfig.books;
+  // Use order defined in siteConfig.books (config.ts)
 
   const [textIndex, setTextIndex] = useState(0);
 
@@ -67,7 +68,7 @@ export default function Home() {
       >
         <h2 className="text-3xl font-bold text-center mb-8">Books</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {books.slice(0, 2).map((book, index) => (
+          {(books ?? []).slice(0, 2).map((book, index: number) => (
             <motion.div
               key={index}
               className="flex flex-col sm:flex-row bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"

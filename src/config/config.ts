@@ -286,16 +286,16 @@ certifications: [
 
   books: [
     {
-      title: 'Machine Learning for Business',
-      description: 'Machine Learning for Business is an interactive and practical learning hub that connects business strategy with modern machine learning techniques.',
-      image: getAsset('images/book_cover_machine_learning_for_business.png'), // Resolves to /book1.jpg
-      link: 'https://chandraveshchaudhari.github.io/Machine_Learning_For_Business/intro.html#',
-    },
-    {
       title: 'Programming for Machine Learning and Business',
       description: 'This interactive book is designed to help learners, researchers, and professionals bridge the gap between Python programming, machine learning fundamentals, and real-world business applications.',
       image: getAsset('images/Book_Cover_programming_for_business.png'), // Resolves to /book2.jpg
       link: 'https://chandraveshchaudhari.github.io/Programming_for_Business/intro.html',
+    },
+    {
+      title: 'Machine Learning for Business',
+      description: 'Machine Learning for Business is an interactive and practical learning hub that connects business strategy with modern machine learning techniques.',
+      image: getAsset('images/book_cover_machine_learning_for_business.png'), // Resolves to /book1.jpg
+      link: 'https://chandraveshchaudhari.github.io/Machine_Learning_For_Business/intro.html#',
     },
   ],
 

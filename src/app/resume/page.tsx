@@ -10,7 +10,7 @@ export default function ResumePage() {
   const resumeRef = useRef<HTMLDivElement>(null);
 
   // Resolve profile image (support string or { src, fallback })
-  const personal = siteConfig.personal as any;
+  const personal = siteConfig.personal;
   const imageObj = personal.image && typeof personal.image === 'object' ? personal.image : null;
   const profileImageSrc: string = imageObj ? imageObj.src : (personal.image as string);
 

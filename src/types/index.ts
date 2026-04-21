@@ -1,10 +1,15 @@
 // src/types/index.ts
 
 
+export interface PersonalImage {
+  src: string;
+  fallback: string;
+}
+
 export interface Personal {
   name: string;
   title: string;
-  image: string;
+  image: string | PersonalImage;
   email: string;
   location: string;
 }

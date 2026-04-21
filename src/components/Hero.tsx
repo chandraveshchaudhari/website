@@ -27,7 +27,7 @@ export default function Hero({ animatedText }: HeroProps) {
     personal.image && typeof personal.image === 'object'
       ? personal.image
       : null;
-  const initialImageSrc = imageObj ? imageObj.src : (personal.image as string);
+  const initialImageSrc = imageObj ? imageObj.src : (personal.image as unknown as string);
   const fallbackImageSrc = imageObj ? imageObj.fallback : undefined;
   const [currentSrc, setCurrentSrc] = useState(initialImageSrc);
 

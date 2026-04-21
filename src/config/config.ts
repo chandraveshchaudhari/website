@@ -25,7 +25,7 @@ const siteConfig = {
     description: 'Official website showcasing Dr. Chandravesh Chaudhari\'s education, research, projects and experience.',
   },
 
-  animatedText: ['AI Researcher', 'Educator', 'Speaker', 'Builder'],
+  animatedText: ['Multimodal Machine Learning', 'Decision Fusion', 'Hybrid Systems', 'Local LLMs', 'Finance Applications', 'AutoML', 'Literature Review Automation'],
 
 navigation: [
   { name: 'Home', url: '/' },
@@ -51,11 +51,23 @@ navigation: [
   education: [
     {
       institution: 'Christ University, Bangalore',
-      degree: 'Doctor of Philosophy (PhD)',
-      year: '2020–2025',
+      degree: 'Doctor of Philosophy (PhD) in Commerce',
+      department: 'Department of Commerce',
+      year: 'June 2020 – September 2025',
       image: getAsset('images/education/Christ_University.png'),
+      guide: 'Dr. Geetanjali Purswani',
+      thesisTitle: 'Advances on Stock Price Prediction Using Machine Learning',
+      thesisLink: 'http://hdl.handle.net/10603/680165',
       description: [
-        'Stock prediction using multimodal learning (tabular, sentiment, time-series, news video)',
+        'Thesis: Advances on Stock Price Prediction Using Machine Learning',
+      ],
+      keyContributions: [
+        'Multimodal Representation: Integrated tabular financial indicators, time-series stock data, and LLM-driven sentiment insights',
+        'Representation Learning for Structured Data: Developed advanced embeddings and encodings for structured financial data',
+        'Information Fusion and Decision Fusion: Early, intermediate, late fusion + decision-level ensemble fusion',
+        'Temporal Alignment & Multi-Time-Scale Integration: Synchronized intra-day, daily, weekly, and event-driven signals',
+        'Feature-level, decision-level, and hybrid fusion techniques',
+        'Feature importance analysis and model validation for financial models',
       ],
     },
     {
@@ -200,6 +212,10 @@ certifications: [
     title: "HackerRank SQL (Basic)",
     file: getAsset("images/education/Certifications/HackerRank SQL basic.png"),
   },
+  {
+    title: "Programming with JavaScript (Coursera)",
+    file: 'https://coursera.org/verify/PS4RNI0GLH9C',
+  },
 ],
 
 
@@ -289,13 +305,79 @@ certifications: [
       title: 'Programming for Machine Learning and Business',
       description: 'This interactive book is designed to help learners, researchers, and professionals bridge the gap between Python programming, machine learning fundamentals, and real-world business applications.',
       image: getAsset('images/Book_Cover_programming_for_business.png'), // Resolves to /book2.jpg
-      link: 'https://chandraveshchaudhari.github.io/Programming_for_Business/intro.html',
+      link: 'https://chandraveshchaudhari.github.io/Programming_for_Business/',
     },
     {
       title: 'Machine Learning for Business',
       description: 'Machine Learning for Business is an interactive and practical learning hub that connects business strategy with modern machine learning techniques.',
       image: getAsset('images/book_cover_machine_learning_for_business.png'), // Resolves to /book1.jpg
-      link: 'https://chandraveshchaudhari.github.io/Machine_Learning_For_Business/intro.html#',
+      link: 'https://chandraveshchaudhari.github.io/Machine_Learning_For_Business/',
+    },
+  ],
+
+  // Open-source projects and contributions
+  openSource: [
+    {
+      title: 'brain-ai (Multimodal AutoML Framework)',
+      github: 'https://github.com/chandraveshchaudhari/brain-ai',
+      pip: 'pip install multi-modal-automl',
+      features: [
+        'Multimodal learning (text, image, tabular)',
+        'Early / late / decision fusion and meta-fusion',
+        'Local LLM support and agentic flows',
+        'Apache Airflow + MLflow integration',
+      ],
+    },
+    {
+      title: 'LitSynth / Research Management System',
+      github: 'https://github.com/chandraveshchaudhari/research-management-system',
+      features: [
+        'Offline local LLM inference',
+        'RAG pipelines and semantic search',
+        'Document summarization, literature triage, citation intelligence',
+        'React web app, AWS Lambda, BeeWare native apps',
+      ],
+    },
+    {
+      title: 'InstantGrade / evaluator',
+      description: 'Automated evaluation & grading system for Python notebooks and Excel assignments',
+    },
+  ],
+
+  // Open-source contributions (external projects)
+  openSourceContributions: [
+    {
+      project: 'neuralforecast',
+      repo: 'https://github.com/Nixtla/neuralforecast',
+      note: 'Contributed fixes/features and collaborated on forecasting tooling',
+    },
+  ],
+
+  // Patents (Provisional)
+  patents: [
+    {
+      applicationNo: '202541071889',
+      title: 'An Automated Framework for Hybrid Fusion of Multi-Modal Data Using Configurable AutoML Pipelines',
+      year: 2025,
+    },
+    {
+      applicationNo: '202641026227',
+      title: 'Research Management System for Provenance-enabled Retrieval-Augmented Generation and Research Workflow Automation',
+      year: 2026,
+    },
+  ],
+
+  // Copyright registrations
+  copyrights: [
+    {
+      title: 'Screening Research Documents and Citations from Multiple Databases',
+      diaryNo: '7645/2022-CO/L',
+      repo: 'systematic-reviewpy',
+    },
+    {
+      title: 'Automation for Systematic Review',
+      diaryNo: '15427/2022-CO/L',
+      repo: 'browser-automationpy',
     },
   ],
 
@@ -304,7 +386,7 @@ certifications: [
     linkedin: 'https://www.linkedin.com/in/chandravesh-chaudhari/',
     github: 'https://github.com/chandraveshchaudhari',
     googleScholar: 'https://scholar.google.com/citations?authuser=1&user=V78qbA8AAAAJ',
-  orcid: 'https://orcid.org/0000-0003-1053-7541',
+    orcid: 'https://orcid.org/0000-0003-1053-7541',
   },
 };
 

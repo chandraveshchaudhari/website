@@ -42,6 +42,22 @@ export default function ResearchPage() {
         Research
       </motion.h1>
 
+      {(siteConfig.researchInterests || []).length > 0 && (
+        <section className="mb-8">
+          <h3 className="text-2xl font-semibold mb-3">Research Interests</h3>
+          <div className="flex flex-wrap gap-2">
+            {siteConfig.researchInterests.map((ri, i) => (
+              <span
+                key={i}
+                className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-sm rounded-full"
+              >
+                {ri}
+              </span>
+            ))}
+          </div>
+        </section>
+      )}
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {research.map((res, index) => {
           const venue = res.journal ?? res.conferences ?? null;
@@ -210,8 +226,8 @@ export default function ResearchPage() {
               <div key={i} className="p-4 bg-white dark:bg-gray-800 rounded-md shadow-sm">
                 <h3 className="font-semibold">{c.title}</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400">Diary No.: {c.diaryNo}</p>
-                {c.repo && (
-                  <Link href={`https://github.com/${c.repo}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline text-sm">
+                {(c as { repo?: string }).repo && (
+                  <Link href={`https://github.com/${(c as { repo?: string }).repo}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline text-sm">
                     View Repository
                   </Link>
                 )}

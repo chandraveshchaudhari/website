@@ -44,14 +44,14 @@ export default function Home() {
       >
         <h2 className="text-3xl font-bold text-center mb-8">Research Interests</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {siteConfig.research.map((res, index) => (
+          {(siteConfig.researchInterests || []).map((interest, index) => (
             <motion.div
               key={index}
               className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
-              {res.title}
+              {interest}
             </motion.div>
           ))}
         </div>

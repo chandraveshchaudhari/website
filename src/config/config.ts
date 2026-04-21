@@ -15,9 +15,9 @@ const siteConfig = {
       src: getAsset('images/profile.png'), // Resolves to /profile.png or /base-path/profile.png
       fallback: remoteLogo,
     },
-    description: 'Chandravesh Chaudhari, Ph.D. is an applied researcher and practitioner building production-ready machine learning systems for finance, decision intelligence, and research automation. He combines rigorous academic methods with practical engineering to deliver reproducible, scalable solutions used in experiments and prototypes.\n\n' +
-      'At Christ University (School of Business and Management), he teaches predictive analytics, financial forecasting, and applied data science. He mentors student research, leads curriculum development, and helps teams transition models from research code to reproducible pipelines.\n\n' +
-      'He holds a Ph.D. and a Masters in Finance, and has multiple industry certifications in deep learning and applied analytics. His research emphasises multimodal learning, AutoML, and finance-oriented forecasting, with a strong focus on productionization, evaluation, and reproducibility.',
+    description: 'I build production-ready machine learning systems for finance, decision intelligence, and research automation. I combine rigorous research methods with practical engineering to deliver reproducible, scalable systems used in experiments and production prototypes.\n\n' +
+      'At Christ University (School of Business and Management), I teach predictive analytics, financial forecasting, and applied data science. I supervise student research, lead curriculum development, and help teams transition models from research code into reproducible pipelines.\n\n' +
+      'I hold a Ph.D. and a Master\'s in Finance and maintain industry certifications in deep learning and applied analytics. My research focuses on multimodal learning, AutoML, and finance-oriented forecasting, with emphasis on productionization, rigorous evaluation, and reproducibility.',
     tagline: 'Empowering business through data-driven intelligence.',
   location: 'Bangalore, India',
   },

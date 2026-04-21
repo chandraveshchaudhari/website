@@ -440,12 +440,10 @@ certifications: [
     {
       title: 'Screening Research Documents and Citations from Multiple Databases',
       diaryNo: '7645/2022-CO/L',
-      repo: 'systematic-reviewpy',
     },
     {
       title: 'Automation for Systematic Review',
       diaryNo: '15427/2022-CO/L',
-      repo: 'browser-automationpy',
     },
   ],
   

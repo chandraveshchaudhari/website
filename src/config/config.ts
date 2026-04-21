@@ -4,14 +4,16 @@ export const getAsset = (path: string) => {
   return `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/${path}`;
 };
 
+// Central remote logo URL (load once and reuse)
+const remoteLogo = 'https://raw.githubusercontent.com/chandraveshchaudhari/chandraveshchaudhari/b4b4c8ff7b7b9747e3c8a67a2ab561e4aae7d7df/data/logo.png';
+
 const siteConfig = {
   personal: {
     name: 'Dr. Chandravesh Chaudhari',
     title: 'Assistant Professor | Multimodal AI Researcher',
     image: {
       src: getAsset('images/profile.png'), // Resolves to /profile.png or /base-path/profile.png
-      fallback:
-        'https://raw.githubusercontent.com/chandraveshchaudhari/chandraveshchaudhari/b4b4c8ff7b7b9747e3c8a67a2ab561e4aae7d7df/data/logo.png',
+      fallback: remoteLogo,
     },
     description: 'Chandravesh Chaudhari, Ph.D. is an applied researcher and practitioner building production-ready machine learning systems for finance, decision intelligence, and research automation. He combines rigorous academic methods with practical engineering to deliver reproducible, scalable solutions used in experiments and prototypes.\n\n' +
       'At Christ University (School of Business and Management), he teaches predictive analytics, financial forecasting, and applied data science. He mentors student research, leads curriculum development, and helps teams transition models from research code to reproducible pipelines.\n\n' +
@@ -253,8 +255,7 @@ certifications: [
   projects: [
     {
       title: 'Financial Variable Generation',
-      cardImage:
-        'https://raw.githubusercontent.com/chandraveshchaudhari/chandraveshchaudhari/b4b4c8ff7b7b9747e3c8a67a2ab561e4aae7d7df/data/logo.png',
+      cardImage: remoteLogo,
       description:
         'Generate financial ratios and derived fundamental-analysis variables from extracted financial statement data.',
     },
@@ -284,7 +285,7 @@ certifications: [
     },
     {
       title: "Financial Variable Generation",
-      cardImage: getAsset("images/project/financial-variable-generation.png"),
+      cardImage: remoteLogo,
       description: "Automated generation of financial indicators, corporate-event-aware features, and backtest-ready time-series feature pipelines.",
       Githublink: "https://github.com/chandraveshchaudhari/financial-variable-generation",
       localPath: "projects/core-research/financial-variable-generation",
@@ -294,7 +295,7 @@ certifications: [
     },
     {
       title: "LitSynth: Literature Synthesis / Research Management System",
-      cardImage: getAsset("images/project/litsynth.png"),
+      cardImage: remoteLogo,
       description: "RAG + agentic flows and citation-graph intelligence for literature triage and automated synthesis of systematic reviews. Also maintained as a research management system for provenance-enabled workflows.",
       Githublink: "https://github.com/chandraveshchaudhari/research-management-system",
       localPath: "projects/core-research/research_management_system",
@@ -304,7 +305,7 @@ certifications: [
     },
     {
       title: "Resume and Portfolio Website",
-      cardImage: getAsset("images/project/resume_website.png"),
+      cardImage: remoteLogo,
       description: "Generator for rich resume content and portfolio pages with exportable PDF/HTML resume focused on applied-scientist roles.",
       Githublink: "https://github.com/chandraveshchaudhari/resume_website",
       localPath: "projects/personal-brand/resume_website",
@@ -314,7 +315,7 @@ certifications: [
     },
     {
       title: "InstantGrade: Automated Evaluator",
-      cardImage: getAsset("images/project/instantgrade.png"),
+      cardImage: remoteLogo,
       description: "Automated evaluation system for notebooks and Excel assignments with rubric-driven feedback generation.",
       Githublink: "https://github.com/chandraveshchaudhari/instantgrade",
       localPath: "projects/education/instantgrade",
@@ -324,7 +325,7 @@ certifications: [
     },
     {
       title: "JupyterBook + JupyterLite Template (v2)",
-      cardImage: getAsset("images/project/jupyterbook_lite.png"),
+      cardImage: "https://raw.githubusercontent.com/chandraveshchaudhari/jupyterbook2_with_lite_template/main/media/images/banner_image.png",
       description: "Template combining JupyterBook with JupyterLite for interactive educational books with CI-ready builds and launchers.",
       Githublink: "https://github.com/chandraveshchaudhari/Jupyterbook_with_lite_template",
       localPath: "projects/tools/jupyterbook2_with_lite_template",
@@ -446,6 +447,18 @@ certifications: [
       diaryNo: '15427/2022-CO/L',
       repo: 'browser-automationpy',
     },
+  ],
+  
+  researchInterests: [
+    'Decision-level and meta-fusion for multimodal learning',
+    'Multimodal AutoML for tabular, temporal, and text data',
+    'Local LLM integration and RAG pipelines for research automation',
+    'Temporal alignment and multi-scale modeling for financial time-series',
+    'Representation learning for heterogeneous tabular data',
+    'Information-theoretic analysis of fusion and ensembles',
+    'Hybrid feature selection with LLM-guided priors',
+    'Tabular foundation models and scalable structured-data models',
+    'Efficiency, compression, and edge-deployable multimodal systems',
   ],
 
   contact: {

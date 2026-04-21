@@ -161,7 +161,7 @@ export default function ResumePage() {
                   rel="noopener noreferrer"
                   className="text-blue-600 hover:underline"
                 >
-                  Know More
+                  Open Book
                 </a>
               )}
             </div>

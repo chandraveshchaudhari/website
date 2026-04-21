@@ -9,13 +9,9 @@ const siteConfig = {
     name: 'Dr. Chandravesh Chaudhari',
     title: 'Assistant Professor | Multimodal AI Researcher',
     image: getAsset('images/profile.png'), // Resolves to /profile.png or /base-path/profile.png
-    description: 'Chandravesh Chaudhari, Ph.D. is an academic and practitioner working at the intersection of business analytics, machine learning, and technology-driven decision-making. His research and teaching focus on applying data science and emerging technologies to solve complex problems in business, economics, and management.\n' +
-        '\n' +
-        'Chandravesh teaches in the School of Business and Management at Christ University, where he has guided numerous students and professionals in mastering advanced Excel, Python, machine learning, and applied analytics. He is deeply involved in curriculum design, research mentorship, and capacity building for industry-oriented business analytics education.\n' +
-        '\n' +
-        'He earned his Ph.D. from Christ University, holds an Masters in Finance, and has completed specialized certifications in analytics and programming. His academic work emphasizes bridging theoretical concepts with real-world applications, particularly in domains such as financial analytics, business intelligence, and operational optimization.\n' +
-        '\n' +
-        'Chandravesh is the author of books “Programming for Machine Learning and Business” and “Machine Learning for Business". He regularly conducts training programs and workshops for professionals and students, focusing on making advanced analytical methods accessible and impactful.',
+    description: 'Chandravesh Chaudhari, Ph.D. is an applied researcher and practitioner building production-ready machine learning systems for finance, decision intelligence, and research automation. He combines rigorous academic methods with practical engineering to deliver reproducible, scalable solutions used in experiments and prototypes.\n\n' +
+      'At Christ University (School of Business and Management), he teaches predictive analytics, financial forecasting, and applied data science. He mentors student research, leads curriculum development, and helps teams transition models from research code to reproducible pipelines.\n\n' +
+      'He holds a Ph.D. and a Masters in Finance, and has multiple industry certifications in deep learning and applied analytics. His research emphasises multimodal learning, AutoML, and finance-oriented forecasting, with a strong focus on productionization, evaluation, and reproducibility.',
     tagline: 'Empowering business through data-driven intelligence.',
   location: 'Bangalore, India',
   },
@@ -228,8 +224,10 @@ certifications: [
     place: "Christ University",
     time: "(May 2025 – Present)",
     desp: [
-      "Teaching: Predictive Analytics, Financial Forecasting",
-      "Developed automated Excel assignment checker",
+      "Teaching: Predictive Analytics, Financial Forecasting, and Applied Machine Learning",
+      "Developed automated Excel assignment checker and reproducible grading pipelines",
+      "Supervised student research projects that transitioned to shared GitHub repos and evaluation pipelines",
+      "Led efforts to productionize experiment pipelines and reproducible notebooks for reproducible evaluation",
     ],
   },
   {
@@ -248,22 +246,78 @@ certifications: [
   // ✅ Projects section updated
   projects: [
     {
-      title: "MultiModal Machine Learning AutoML",
+      title: "BMMA: Multimodal AutoML",
       cardImage: getAsset("images/project/Brain-AutoML.png"),
-      description: "BMMA framework is capable of scaling to multiple modalities such as tabular, sentiment data, time series, and computer vision data...",
+      description: "Multimodal AutoML framework that orchestrates modality adapters, search, and robust evaluation for tabular, time-series, text, and image data.",
       Githublink: "https://github.com/chandraveshchaudhari/brain-ai",
+      localPath: "projects/core-research/brain-ai",
+      tech: ["Python", "PyTorch", "Scikit-learn", "MLflow", "Airflow"],
+      role: "Lead author & architect",
+      highlights: [
+        "Designed modality adapters and evaluation harness for reproducible experiments",
+        "Implemented decision-level ensemble fusion and meta-fusion techniques",
+        "Integrated local LLMs to augment textual modality features",
+      ],
     },
     {
-      title: "Hybrid Subset Feature Selection and Importance Framework",
+      title: "Hybrid Feature Selection & Importance",
       cardImage: getAsset("images/project/HSFSIframework.png"),
-      description: "Implements MultiSURF, ReliefF, SURF, and more for scalable feature selection...",
+      description: "Toolkit for hybrid subset selection and importance ranking for explainable ML across high-dimensional datasets.",
       Githublink: "https://github.com/chandraveshchaudhari/hybrid-feature-selection",
+      localPath: "projects/core-research/hybrid-feature-selection",
+      tech: ["Python", "NumPy", "Scikit-learn"],
+      role: "Maintainer & algorithm designer",
+      highlights: ["Implements MultiSURF/ReliefF/SURF variants", "Scales to high-dimensional tabular datasets"],
     },
     {
-      title: "systematic-reviewpy",
-      cardImage: getAsset("images/project/systematic-reviewpy.png"),
-      description: "An open-source Python framework for systematic review based on PRISMA",
-      Githublink: "https://github.com/chandraveshchaudhari/systematic-reviewpy",
+      title: "Financial Variable Generation",
+      cardImage: getAsset("images/project/financial-variable-generation.png"),
+      description: "Automated generation of financial indicators, corporate-event-aware features, and backtest-ready time-series feature pipelines.",
+      Githublink: "https://github.com/chandraveshchaudhari/financial-variable-generation",
+      localPath: "projects/core-research/financial-variable-generation",
+      tech: ["Pandas", "NumPy"],
+      role: "Developer",
+      highlights: ["Event-aware feature windows", "Leakage-safe backtesting support"],
+    },
+    {
+      title: "LitSynth: Literature Synthesis / Research Management System",
+      cardImage: getAsset("images/project/litsynth.png"),
+      description: "RAG + agentic flows and citation-graph intelligence for literature triage and automated synthesis of systematic reviews. Also maintained as a research management system for provenance-enabled workflows.",
+      Githublink: "https://github.com/chandraveshchaudhari/research-management-system",
+      localPath: "projects/core-research/research_management_system",
+      tech: ["Local LLMs", "Python", "FAISS"],
+      role: "Product owner",
+      highlights: ["Automates PRISMA-style triage", "Citation graph extraction and summarization", "Provenance-aware ingestion pipelines"],
+    },
+    {
+      title: "Resume and Portfolio Website",
+      cardImage: getAsset("images/project/resume_website.png"),
+      description: "Generator for rich resume content and portfolio pages with exportable PDF/HTML resume focused on applied-scientist roles.",
+      Githublink: "https://github.com/chandraveshchaudhari/resume_website",
+      localPath: "projects/personal-brand/resume_website",
+      tech: ["TypeScript", "Next.js", "React"],
+      role: "Owner & frontend lead",
+      highlights: ["Enhanced resume export & structured project metadata for hiring signals"],
+    },
+    {
+      title: "InstantGrade: Automated Evaluator",
+      cardImage: getAsset("images/project/instantgrade.png"),
+      description: "Automated evaluation system for notebooks and Excel assignments with rubric-driven feedback generation.",
+      Githublink: "https://github.com/chandraveshchaudhari/instantgrade",
+      localPath: "projects/education/instantgrade",
+      tech: ["Python", "nbformat", "Pandas"],
+      role: "Contributor",
+      highlights: ["Rubric-based scoring", "Automated feedback generation"],
+    },
+    {
+      title: "JupyterBook + JupyterLite Template (v2)",
+      cardImage: getAsset("images/project/jupyterbook_lite.png"),
+      description: "Template combining JupyterBook with JupyterLite for interactive educational books with CI-ready builds and launchers.",
+      Githublink: "https://github.com/chandraveshchaudhari/Jupyterbook_with_lite_template",
+      localPath: "projects/tools/jupyterbook2_with_lite_template",
+      tech: ["JupyterLite", "Markdown", "CI"],
+      role: "Template maintainer",
+      highlights: ["In-browser interactive examples", "Built-in Colab / binder launchers", "Automated build scripts"],
     },
   ],
 

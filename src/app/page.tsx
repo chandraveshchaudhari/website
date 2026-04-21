@@ -94,7 +94,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Know More
+                  Open Book
                 </Link>
               </div>
             </motion.div>

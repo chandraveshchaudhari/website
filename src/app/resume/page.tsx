@@ -9,6 +9,11 @@ export default function ResumePage() {
   // ✅ define ref inside component
   const resumeRef = useRef<HTMLDivElement>(null);
 
+  // Resolve profile image (support string or { src, fallback })
+  const personal = siteConfig.personal as any;
+  const imageObj = personal.image && typeof personal.image === 'object' ? personal.image : null;
+  const profileImageSrc: string = imageObj ? imageObj.src : (personal.image as string);
+
   // ✅ useReactToPrint with contentRef
   const handlePrint = useReactToPrint({
     contentRef: resumeRef, // Pass the ref directly, not a callback
@@ -39,7 +44,7 @@ export default function ResumePage() {
         <div className="flex items-center mb-6">
           <div className="w-24 h-24 relative mr-6">
             <Image
-              src={siteConfig.personal.image}
+              src={profileImageSrc}
               alt={siteConfig.personal.name}
               fill
               className="rounded-full object-cover"

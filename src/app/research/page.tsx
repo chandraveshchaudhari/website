@@ -185,6 +185,41 @@ export default function ResearchPage() {
           );
         })}
       </div>
+
+      {/* Intellectual Property: Patents & Copyrights */}
+      {(siteConfig.patents || []).length > 0 && (
+        <section className="mt-12">
+          <h2 className="text-3xl font-bold mb-4">Patents</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {siteConfig.patents.map((p, i) => (
+              <div key={i} className="p-4 bg-white dark:bg-gray-800 rounded-md shadow-sm">
+                <h3 className="font-semibold">{p.title}</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Application No.: {p.applicationNo}</p>
+                {p.year && <p className="text-sm text-gray-600 dark:text-gray-400">Year: {p.year}</p>}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {(siteConfig.copyrights || []).length > 0 && (
+        <section className="mt-8">
+          <h2 className="text-3xl font-bold mb-4">Copyrights</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {siteConfig.copyrights.map((c, i) => (
+              <div key={i} className="p-4 bg-white dark:bg-gray-800 rounded-md shadow-sm">
+                <h3 className="font-semibold">{c.title}</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Diary No.: {c.diaryNo}</p>
+                {c.repo && (
+                  <Link href={`https://github.com/${c.repo}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline text-sm">
+                    View Repository
+                  </Link>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
     </main>
   );
 }

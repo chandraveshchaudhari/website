@@ -18,9 +18,18 @@ interface HeroProps {
 
 export default function Hero({ animatedText }: HeroProps) {
   const [imageError, setImageError] = useState(false);
+  const [triedFallback, setTriedFallback] = useState(false);
   const [showFullDesc, setShowFullDesc] = useState(false);
   const contact = siteConfig.contact;
   const personal = siteConfig.personal;
+
+  const imageObj =
+    personal.image && typeof personal.image === 'object'
+      ? personal.image
+      : null;
+  const initialImageSrc = imageObj ? imageObj.src : (personal.image as unknown as string);
+  const fallbackImageSrc = imageObj ? imageObj.fallback : undefined;
+  const [currentSrc, setCurrentSrc] = useState(initialImageSrc);
 
   const maxLength = 250;
   const isLong = personal.description.length > maxLength;
@@ -173,14 +182,19 @@ export default function Hero({ animatedText }: HeroProps) {
             </div>
           ) : (
             <Image
-              src={personal.image}
+              src={currentSrc}
               alt={`${personal.name} — profile`}
               width={300}
               height={450}
               className="rounded-lg object-cover aspect-[2/3]"
               onError={() => {
-                console.error(`Failed to load image: ${personal.image}`);
-                setImageError(true);
+                console.error(`Failed to load image: ${currentSrc}`);
+                if (fallbackImageSrc && !triedFallback) {
+                  setTriedFallback(true);
+                  setCurrentSrc(fallbackImageSrc);
+                } else {
+                  setImageError(true);
+                }
               }}
               priority
             />

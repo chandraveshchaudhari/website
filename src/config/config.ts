@@ -8,7 +8,11 @@ const siteConfig = {
   personal: {
     name: 'Dr. Chandravesh Chaudhari',
     title: 'Assistant Professor | Multimodal AI Researcher',
-    image: getAsset('images/profile.png'), // Resolves to /profile.png or /base-path/profile.png
+    image: {
+      src: getAsset('images/profile.png'), // Resolves to /profile.png or /base-path/profile.png
+      fallback:
+        'https://raw.githubusercontent.com/chandraveshchaudhari/chandraveshchaudhari/b4b4c8ff7b7b9747e3c8a67a2ab561e4aae7d7df/data/logo.png',
+    },
     description: 'Chandravesh Chaudhari, Ph.D. is an applied researcher and practitioner building production-ready machine learning systems for finance, decision intelligence, and research automation. He combines rigorous academic methods with practical engineering to deliver reproducible, scalable solutions used in experiments and prototypes.\n\n' +
       'At Christ University (School of Business and Management), he teaches predictive analytics, financial forecasting, and applied data science. He mentors student research, leads curriculum development, and helps teams transition models from research code to reproducible pipelines.\n\n' +
       'He holds a Ph.D. and a Masters in Finance, and has multiple industry certifications in deep learning and applied analytics. His research emphasises multimodal learning, AutoML, and finance-oriented forecasting, with a strong focus on productionization, evaluation, and reproducibility.',
@@ -245,6 +249,13 @@ certifications: [
 
   // ✅ Projects section updated
   projects: [
+    {
+      title: 'Financial Variable Generation',
+      cardImage:
+        'https://raw.githubusercontent.com/chandraveshchaudhari/chandraveshchaudhari/b4b4c8ff7b7b9747e3c8a67a2ab561e4aae7d7df/data/logo.png',
+      description:
+        'Generate financial ratios and derived fundamental-analysis variables from extracted financial statement data.',
+    },
     {
       title: "BMMA: Multimodal AutoML",
       cardImage: getAsset("images/project/Brain-AutoML.png"),
